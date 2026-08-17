@@ -12,25 +12,82 @@ export async function POST(request: Request) {
       );
     }
 
-    // Target recipient emails for VENTORO S.R.L.
-    const recipientEmails = ['info@ventoro.ro', 'office@ventoro.ro'];
+    const recipientEmails = 'info@ventoro.ro, office@ventoro.ro';
+    const accessKey = process.env.WEB3FORMS_ACCESS_KEY || process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+    const formspreeId = process.env.FORMSPREE_FORM_ID;
 
-    console.log('--- [NEW CONTACT FORM INQUIRY] ---');
-    console.log(`To: ${recipientEmails.join(', ')}`);
-    console.log(`From: ${name} <${email}>`);
+    // Option A: If Formspree ID is configured
+    if (formspreeId) {
+      const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phone: phone || 'N/A',
+          service: service || 'General Inquiry',
+          message,
+          _subject: `New Inquiry from ${name} - VENTORO S.R.L.`,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Formspree dispatch failed');
+      }
+
+      return NextResponse.json({
+        success: true,
+        message: 'Inquiry dispatched and archived via Formspree',
+      });
+    }
+
+    // Option B: Web3Forms (Sends email directly to recipient + Archives in Web3Forms dashboard)
+    if (accessKey) {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name,
+          email,
+          phone: phone || 'N/A',
+          service: service || 'General Inquiry',
+          message,
+          subject: `[VENTORO Contact Form] New message from ${name}`,
+          from_name: 'VENTORO Website Lead',
+        }),
+      });
+
+      const data = await response.json();
+      if (!data.success) {
+        throw new Error(data.message || 'Web3Forms dispatch failed');
+      }
+
+      return NextResponse.json({
+        success: true,
+        message: 'Inquiry dispatched and archived via Web3Forms',
+      });
+    }
+
+    // Development / Local Fallback Log
+    console.log('--- [NEW CONTACT FORM SUBMISSION] ---');
+    console.log(`Target: ${recipientEmails}`);
+    console.log(`Name: ${name}`);
+    console.log(`Email: ${email}`);
     console.log(`Phone: ${phone || 'N/A'}`);
     console.log(`Service: ${service || 'General Inquiry'}`);
     console.log(`Message: ${message}`);
-    console.log('----------------------------------');
-
-    // If SMTP environment variables are provided (e.g. on Vercel), send real email
-    if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
-      // Optional: Nodemailer integration when SMTP credentials are set in .env / Vercel
-    }
+    console.log('------------------------------------');
 
     return NextResponse.json({
       success: true,
-      message: 'Inquiry received successfully and dispatched to info@ventoro.ro',
+      message: 'Inquiry received successfully (Ready for Web3Forms/Formspree forwarding)',
     });
   } catch (error) {
     console.error('Contact form submission error:', error);
