@@ -26,7 +26,7 @@ export const AboutPreview: React.FC<AboutPreviewProps> = ({ lang }) => {
           <div className="lg:col-span-6 relative">
             <div className="relative rounded-2xl overflow-hidden border border-gray-800 shadow-2xl bg-black/50 aspect-[4/3]">
               <Image
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop"
+                src="/images/about-presentation.jpg"
                 alt="VENTORO Headquarters & Corporate Operations"
                 fill
                 className="object-cover"

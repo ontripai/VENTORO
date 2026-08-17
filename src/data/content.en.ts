@@ -42,7 +42,7 @@ export const contentEn = {
         btnPrimaryHref: "/en/services",
         btnSecondary: "Get in Touch",
         btnSecondaryHref: "/en/contact",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop"
+        image: "/images/hero-industrial.jpg"
       },
       {
         badge: "ENGINEERING & POWER GENERATION",
@@ -52,7 +52,7 @@ export const contentEn = {
         btnPrimaryHref: "/en/services/energy-industry",
         btnSecondary: "Recent Projects",
         btnSecondaryHref: "/en/projects",
-        image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1600&auto=format&fit=crop"
+        image: "/images/hero-energy.jpg"
       },
       {
         badge: "GLOBAL LOGISTICS & COMMERCE",
@@ -62,7 +62,7 @@ export const contentEn = {
         btnPrimaryHref: "/en/services/logistics-services",
         btnSecondary: "B2B Partnership",
         btnSecondaryHref: "/en/collaboration",
-        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop"
+        image: "/images/hero-management.jpg"
       }
     ]
   },
@@ -158,7 +158,7 @@ export const contentEn = {
         year: "2024 - 2025",
         location: "Bucharest, Romania",
         metric: "99.99% Uptime & 30% Cost Reduction",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop"
+        image: "/images/project-uae.jpg"
       },
       {
         id: "2",
@@ -168,7 +168,7 @@ export const contentEn = {
         year: "2024",
         location: "Muntenia, Romania",
         metric: "45 MW Generation Capacity",
-        image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800&auto=format&fit=crop"
+        image: "/images/project-energy.jpg"
       },
       {
         id: "3",
@@ -178,7 +178,7 @@ export const contentEn = {
         year: "2023 - 2024",
         location: "Danube Region, Romania",
         metric: "12,000 Hectares Efficiently Irrigated",
-        image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=800&auto=format&fit=crop"
+        image: "/images/project-agriculture.jpg"
       },
       {
         id: "4",
@@ -188,7 +188,7 @@ export const contentEn = {
         year: "2023",
         location: "Ploiești, Romania",
         metric: "Zero Leakage & 100% API Compliance",
-        image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop"
+        image: "/images/project-paraffin.jpg"
       },
       {
         id: "5",
@@ -198,7 +198,7 @@ export const contentEn = {
         year: "2024",
         location: "Austria - Romania Corridor",
         metric: "Delivered Ahead of Schedule in 6 Days",
-        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop"
+        image: "/images/project-cement.jpg"
       },
       {
         id: "6",
@@ -208,7 +208,7 @@ export const contentEn = {
         year: "2024 - 2025",
         location: "Bucharest, Romania",
         metric: "Award-Winning Architectural Interior",
-        image: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=800&auto=format&fit=crop"
+        image: "/images/project-stone.jpg"
       }
     ]
   },

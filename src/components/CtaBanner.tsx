@@ -15,7 +15,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ lang }) => {
   const data = dict.ctaBanner;
 
   return (
-    <section className="relative py-20 bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop')" }}>
+    <section className="relative py-20 bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('/images/hero-industrial.jpg')" }}>
       {/* Dark & Gold Overlay */}
       <div className="absolute inset-0 bg-[#0c1017]/90 backdrop-blur-xs" />
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />

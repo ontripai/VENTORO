@@ -12,7 +12,7 @@ export const servicesList: ServiceClusterItem[] = [
     fullDescRo: "VENTORO S.R.L. oferă servicii specializate de consultanță în tehnologia informației și management (gestiune și exploatare) a mijloacelor de calcul (Cod CAEN 6220). Asistăm organizațiile în transformarea digitală, integrarea arhitecturilor cloud moderne, securitatea cibernetică și optimizarea fluxurilor decizionale prin automatizare și instrumente analitice avansate.",
     fullDescEn: "VENTORO S.R.L. delivers specialized consulting in information technology and computing management/infrastructure operations (NACE 6220). We empower enterprises through digital transformation, modern cloud architecture integration, cybersecurity resilience, and automated workflow intelligence.",
     iconName: "Cpu",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/service-consulting.jpg",
     featuresRo: [
       "Audit tehnic și proiectare arhitecturi IT enterprise",
       "Managementul și exploatarea infrastructurilor de calcul hibride",
@@ -65,7 +65,7 @@ export const servicesList: ServiceClusterItem[] = [
     fullDescRo: "Portofoliul nostru pentru industria energetică include generatoare, motoare electrice de înaltă și medie tensiune (HV și MV), întrerupătoare de circuit, pompe industriale, supape specializate, schimbătoare de căldură, compresoare și instrumente avansate de control al proceselor tehnologice. Toate soluțiile sunt calibrate pentru eficiență energetică maximă și fiabilitate în condiții extreme.",
     fullDescEn: "Our energy industry portfolio comprises industrial generators, high and medium voltage electric motors (HV & MV), circuit breakers, high-pressure pumps, specialized valves, heat exchangers, compressors, and advanced process control instrumentation engineered for optimal energy efficiency and resilience.",
     iconName: "Zap",
-    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/service-energy.jpg",
     featuresRo: [
       "Motoare electrice industriale HV și MV cu randament ridicat",
       "Panouri de distribuție și tablouri de comandă automatizate",
@@ -118,7 +118,7 @@ export const servicesList: ServiceClusterItem[] = [
     fullDescRo: "Industria modernă de petrol și gaze necesită componente și echipamente fără compromisuri în ceea ce privește siguranța și fiabilitatea operațională. Oferim tubulatură specializată, robineți industriali de înaltă presiune, compresoare de gaz, sisteme de filtrare și separare, precum și senzori de proces certificați ATEX/IECEx.",
     fullDescEn: "The modern oil and gas industry requires uncompromising safety and operational excellence. We supply specialized tubular goods, high-pressure industrial valves, gas compressors, filtration and separation units, alongside ATEX/IECEx certified instrumentation.",
     iconName: "Flame",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/service-oil-gas.jpg",
     featuresRo: [
       "Robineți industriali cu bilă, fluture, sertar și reținere (clase ANSI 150 - 2500)",
       "Tubulatură și fitinguri din oțeluri aliate și inoxidabile speciale",
@@ -171,7 +171,7 @@ export const servicesList: ServiceClusterItem[] = [
     fullDescRo: "Susținem producătorii de ciment și agregate cu echipamente robuste proiectate pentru medii abrazive și temperaturi înalte: reductoare de mare putere, cuptoare rotative, role de susținere, ventilatoare industriale de tiraj, căptușeli antiuzură și sisteme complete de filtrare a prafului.",
     fullDescEn: "We support cement and aggregates producers with heavy-duty equipment designed for abrasive and high-temperature environments: high-torque gearboxes, rotary kiln components, support rollers, heavy draft fans, wear linings, and baghouse filtration systems.",
     iconName: "Layers",
-    image: "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/service-cement.jpg",
     featuresRo: [
       "Reductoare planetare și cilindrice de mare capacitate",
       "Benzi transportoare rezistente la căldură și abraziune",
@@ -222,7 +222,7 @@ export const servicesList: ServiceClusterItem[] = [
     fullDescRo: "VENTORO oferă expertiză în managementul și execuția proiectelor complexe de construcții civile și industriale. Gestionăm de la faza de proiectare structurală, terasamente și fundații speciale, până la furnizarea de materiale premium, structuri metalice grele și instalații tehnologice integrate.",
     fullDescEn: "VENTORO delivers engineering and project management for large-scale civil and industrial infrastructure. We manage everything from structural engineering, deep foundations, heavy steel structure supply, through to integrated MEP and water treatment facilities.",
     iconName: "Building2",
-    image: "https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/service-construction.jpg",
     featuresRo: [
       "Dezvoltare clădiri comerciale, spații industriale și birouri",
       "Infrastructură hidrotehnică: baraje, diguri, canale și drenaje",
@@ -273,7 +273,7 @@ export const servicesList: ServiceClusterItem[] = [
     fullDescRo: "Oferim soluții tehnologice de ultimă generație pentru optimizarea resurselor de apă în agricultură. Reabilităm stații de pompare plutitoare și fixe, instalăm sisteme de irigații liniare și pivotante, automatizăm distribuția apei prin senzori de umiditate și control de la distanță prin aplicații mobile.",
     fullDescEn: "We engineer cutting-edge irrigation technologies to maximize agricultural yield and water conservation. We rehabilitate large-scale pumping stations, install center-pivot and drip networks, and automate water distribution via soil moisture telemetry and mobile SCADA interfaces.",
     iconName: "Sprout",
-    image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/service-irrigation.jpg",
     featuresRo: [
       "Reabilitare completă a stațiilor de pompare pentru irigații",
       "Sisteme pivotante și liniare cu eficiență ridicată",
@@ -324,7 +324,7 @@ export const servicesList: ServiceClusterItem[] = [
     fullDescRo: "VENTORO gestionează fluxuri logistice globale complexe, conectând piețele din Europa, Orientul Mijlociu și Asia. Asigurăm transporturi agabaritice, mărfuri generale, containere maritime FCL/LCL, proceduri complete de vămuire și depozitare modernă cu monitorizare în timp real a încărcăturilor.",
     fullDescEn: "VENTORO orchestrates end-to-end global supply chain operations connecting European, Middle Eastern, and Asian markets. We manage heavy-lift project cargo, general freight, FCL/LCL ocean containers, complete customs clearance, and high-security warehousing with real-time tracking.",
     iconName: "Truck",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/service-logistics.jpg",
     featuresRo: [
       "Transport rutier complet (FTL) și parțial (LTL) pe teritoriul Europei",
       "Expediții maritime containerizate (FCL/LCL) prin portul Constanța și porturi majore europene",
@@ -375,7 +375,7 @@ export const servicesList: ServiceClusterItem[] = [
     fullDescRo: "Activăm în comerțul internațional cu produse agroalimentare de prim rang, respectând cele mai riguroase standarde sanitare și sanitar-veterinare (HACCP, IFS, ISO 22000). Furnizăm materii prime alimentare către procesatori industriali, distribuitori naționali și rețele de retail.",
     fullDescEn: "We engage in international agri-food trade, strictly adhering to high-grade hygiene and veterinary standards (HACCP, IFS, ISO 22000). We supply food commodities and bulk ingredients to industrial processors, national wholesalers, and retail networks.",
     iconName: "Utensils",
-    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/service-food.jpg",
     featuresRo: [
       "Trading cereale (grâu, porumb, orz, floarea-soarelui, soia)",
       "Uleiuri vegetale rafinate și brute în vrac sau ambalate",
@@ -426,7 +426,7 @@ export const servicesList: ServiceClusterItem[] = [
     fullDescRo: "Aducem arta milenară a artizanatului oriental în arhitectura interioară modernă. Selecția noastră cuprinde covoare persane autentice din mătase și lână nobilă, lucrate manual de maeștri artizani renumiți, ceramică artistică, vitralii și elemente de decor exclusive pentru reședințe private și hoteluri de lux.",
     fullDescEn: "We unite age-old artistic heritage with contemporary interior architecture. Our curated collection showcases genuine hand-knotted silk and wool Persian rugs crafted by renowned master artisans, museum-grade ceramic art, and luxury bespoke decorative pieces for private estates and boutique hotels.",
     iconName: "Sparkles",
-    image: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/service-handicrafts.jpg",
     featuresRo: [
       "Covoare persane originale cu certificat de autenticitate și proveniență (Isfahan, Tabriz, Qom, Nain)",
       "Piese unicat din mătase pură 100% cu densitate excepțională a nodurilor",
@@ -478,7 +478,7 @@ export const servicesList: ServiceClusterItem[] = [
     fullDescRo: "Furnizăm cele mai rafinate varietăți de piatră naturală direct din cariere internaționale de top. De la marmură albă pură, travertin nobil, onix translucid, până la granit dens pentru trafic intens, asigurăm tăiere la dimensiuni personalizate, finisaje lustruite, mate sau antichizate pentru fațade, pardoseli și băi luxury.",
     fullDescEn: "We source and supply the finest varieties of natural stone directly from premier global quarries. From pristine white marble and classic travertine to backlit translucent onyx and high-traffic granite, we provide custom waterjet cutting, bookmatched slabs, and bespoke finishes for prestigious architecture.",
     iconName: "Gem",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/service-natural-stone.jpg",
     featuresRo: [
       "Plăci mari (slabs) și blocuri brute din cariere selectate",
       "Marmură exclusivă, travertin clasic și onix translucid",
@@ -529,7 +529,7 @@ export const servicesList: ServiceClusterItem[] = [
     fullDescRo: "Echipamentele și componentele noastre pentru minerit sunt construite pentru a rezista celor mai aspre condiții de exploatare. Oferim concasoare cu fălci și conice, ciururi vibratoare, utilaje de încărcare și transport, scule de foraj, pompe de nămol și consumabile rezistente la uzură extremă.",
     fullDescEn: "Our mining equipment and component portfolio is built to endure the most demanding extractive environments. We supply jaw and cone crushers, vibrating screens, heavy haulers, drilling tools, slurry pumps, and high-wear replacement parts.",
     iconName: "Pickaxe",
-    image: "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/service-mining.jpg",
     featuresRo: [
       "Stații mobile și fixe de concasare și sortare a rocilor",
       "Scule de foraj, coroane diamantate și prăjini de foraj",
@@ -580,7 +580,7 @@ export const servicesList: ServiceClusterItem[] = [
     fullDescRo: "VENTORO este un furnizor de încredere pentru spitale, clinici și centre medicale de top. Importăm și distribuim aparatură medicală certificată CE și FDA: ventilatoare ATI, monitoare funcții vitale, ecografe de înaltă rezoluție, mese și lămpi chirurgicale, autoclave industriale și consumabile sterile de unică folosință.",
     fullDescEn: "VENTORO serves as a trusted partner for hospitals, clinics, and research institutions. We distribute CE and FDA certified medical equipment: intensive care ventilators, multiparameter patient monitors, digital ultrasound platforms, surgical suites, and sterile clinical consumables.",
     iconName: "HeartPulse",
-    image: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/service-medical.jpg",
     featuresRo: [
       "Echipamente complete pentru secții de Terapie Intensivă (ATI)",
       "Sisteme de imagistică digitală și ecografie Doppler color",

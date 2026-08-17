@@ -42,7 +42,7 @@ export const contentRo = {
         btnPrimaryHref: "/ro/servicii",
         btnSecondary: "Contactează-ne",
         btnSecondaryHref: "/ro/contact",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop"
+        image: "/images/hero-industrial.jpg"
       },
       {
         badge: "INGINERIE & INDUSTRIE ENERGETICĂ",
@@ -52,7 +52,7 @@ export const contentRo = {
         btnPrimaryHref: "/ro/servicii/industria-energetica",
         btnSecondary: "Proiecte Recente",
         btnSecondaryHref: "/ro/proiecte",
-        image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1600&auto=format&fit=crop"
+        image: "/images/hero-energy.jpg"
       },
       {
         badge: "COMERȚ INTERNAȚIONAL & LOGISTICĂ",
@@ -62,7 +62,7 @@ export const contentRo = {
         btnPrimaryHref: "/ro/servicii/servicii-logistice",
         btnSecondary: "Colaborare B2B",
         btnSecondaryHref: "/ro/colaborare",
-        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop"
+        image: "/images/hero-management.jpg"
       }
     ]
   },
@@ -158,7 +158,7 @@ export const contentRo = {
         year: "2024 - 2025",
         location: "București, România",
         metric: "Uptime 99.99% & Reducere costuri 30%",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop"
+        image: "/images/project-uae.jpg"
       },
       {
         id: "2",
@@ -168,7 +168,7 @@ export const contentRo = {
         year: "2024",
         location: "Muntenia, România",
         metric: "Capacitate 45 MW instalată",
-        image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800&auto=format&fit=crop"
+        image: "/images/project-energy.jpg"
       },
       {
         id: "3",
@@ -178,7 +178,7 @@ export const contentRo = {
         year: "2023 - 2024",
         location: "Regiunea Dunării, România",
         metric: "12,000 hectare irigate eficient",
-        image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=800&auto=format&fit=crop"
+        image: "/images/project-agriculture.jpg"
       },
       {
         id: "4",
@@ -188,7 +188,7 @@ export const contentRo = {
         year: "2023",
         location: "Ploiești, România",
         metric: "Zero scurgeri & Testare API 100%",
-        image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop"
+        image: "/images/project-paraffin.jpg"
       },
       {
         id: "5",
@@ -198,7 +198,7 @@ export const contentRo = {
         year: "2024",
         location: "Tranzit Austria - România",
         metric: "Livrare în termen de 6 zile",
-        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop"
+        image: "/images/project-cement.jpg"
       },
       {
         id: "6",
@@ -208,7 +208,7 @@ export const contentRo = {
         year: "2024 - 2025",
         location: "București, România",
         metric: "Design Premiat & Autenticitate 100%",
-        image: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?q=80&w=800&auto=format&fit=crop"
+        image: "/images/project-stone.jpg"
       }
     ]
   },

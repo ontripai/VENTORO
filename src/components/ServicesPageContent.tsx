@@ -25,7 +25,7 @@ export const ServicesPageContent: React.FC<ServicesPageContentProps> = ({ lang }
   return (
     <div className="flex flex-col w-full bg-[#0f141c]">
       {/* Header Banner */}
-      <section className="relative py-20 bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop')" }}>
+      <section className="relative py-20 bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('/images/hero-industrial.jpg')" }}>
         <div className="absolute inset-0 bg-black/85 backdrop-blur-xs" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Breadcrumbs items={breadcrumbs} lang={lang} />
