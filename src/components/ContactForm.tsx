@@ -63,9 +63,17 @@ export const ContactForm: React.FC<ContactFormProps> = ({ lang }) => {
 
     setIsSubmitting(true);
 
-    // Simulate API network latency
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
       setIsSubmitted(true);
       setFormData({
         name: '',
@@ -75,7 +83,15 @@ export const ContactForm: React.FC<ContactFormProps> = ({ lang }) => {
         message: '',
         agree: false,
       });
-    }, 900);
+    } catch (err) {
+      setErrorMessage(
+        lang === 'ro'
+          ? 'A apărut o eroare la trimiterea mesajului. Vă rugăm să încercați din nou sau să ne contactați direct la info@ventoro.ro.'
+          : 'An error occurred while sending your message. Please try again or contact us directly at info@ventoro.ro.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
