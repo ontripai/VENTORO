@@ -19,6 +19,7 @@ export interface ServiceClusterItem {
   clusterSubtopicsRo: string[];
   clusterSubtopicsEn: string[];
   externalUrl?: string;
+  gallery?: string[];
 }
 
 export interface NavItem {

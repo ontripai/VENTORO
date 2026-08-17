@@ -136,6 +136,37 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
                   </div>
                 </div>
               )}
+              {/* Product & Equipment Showcase Gallery (matching perdac.ro subpage images) */}
+              {service.gallery && service.gallery.length > 0 && (
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <h3 className="font-heading text-lg font-bold text-white flex items-center gap-2">
+                      <Layers className="w-5 h-5 text-gold-500" />
+                      <span>{lang === 'ro' ? 'Galerie Echipamente & Produse' : 'Equipment & Product Gallery'}</span>
+                    </h3>
+                    <span className="text-xs text-gold-400 font-semibold">
+                      {service.gallery.length} {lang === 'ro' ? 'Imagini' : 'Images'}
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-1">
+                    {service.gallery.map((imgUrl, idx) => (
+                      <div
+                        key={idx}
+                        className="relative aspect-[4/3] rounded-xl overflow-hidden border border-gray-800 hover:border-gold-500/60 transition-all group bg-gray-900 shadow-md"
+                      >
+                        <Image
+                          src={imgUrl}
+                          alt={`${title} - Gallery item ${idx + 1}`}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-110"
+                          sizes="(max-width: 768px) 50vw, 25vw"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Topic Cluster Subtopics (SEO Authority Linking) */}
               <div className="p-6 rounded-2xl bg-gray-900/40 border border-gray-800 space-y-3">

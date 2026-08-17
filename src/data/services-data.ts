@@ -52,6 +52,12 @@ export const servicesList: ServiceClusterItem[] = [
       "Industrial IT Systems Exploitation",
       "Custom Enterprise Software Engineering",
       "IT Infrastructure Audit and Digital Strategy"
+    ],
+    gallery: [
+      "/images/gallery/consulting-1.jpg",
+      "/images/gallery/consulting-2.jpg",
+      "/images/gallery/consulting-3.jpg",
+      "/images/gallery/consulting-4.jpg"
     ]
   },
   {
@@ -105,6 +111,11 @@ export const servicesList: ServiceClusterItem[] = [
       "Industrial Transformers and Switchgears",
       "Energy Sector Automation & SCADA",
       "Industrial Energy Efficiency Optimization"
+    ],
+    gallery: [
+      "/images/service-energy.jpg",
+      "/images/hero-energy.jpg",
+      "/images/project-energy.jpg"
     ]
   },
   {
@@ -158,6 +169,15 @@ export const servicesList: ServiceClusterItem[] = [
       "ATEX Certified Field Instrumentation",
       "High-Pressure Industrial Valves",
       "Environmental Safety in Hydrocarbons"
+    ],
+    gallery: [
+      "/images/gallery/oil-slack-wax.jpg",
+      "/images/gallery/oil-paraffin.jpg",
+      "/images/gallery/oil-rubber.jpg",
+      "/images/gallery/oil-base-oil.jpg",
+      "/images/gallery/oil-fuel.jpg",
+      "/images/gallery/oil-lpg.jpg",
+      "/images/gallery/oil-bitumen.jpg"
     ]
   },
   {
@@ -209,6 +229,10 @@ export const servicesList: ServiceClusterItem[] = [
       "Industrial De-dusting and Filtration",
       "Abrasion-Resistant Cast Components",
       "Cement Plant Process Automation"
+    ],
+    gallery: [
+      "/images/service-cement.jpg",
+      "/images/project-cement.jpg"
     ]
   },
   {
@@ -260,6 +284,16 @@ export const servicesList: ServiceClusterItem[] = [
       "Municipal Water & Sewer Networks",
       "Structural Reinforcement and Deep Foundations",
       "Construction Supervision and Technical Management"
+    ],
+    gallery: [
+      "/images/gallery/const-1.jpg",
+      "/images/gallery/const-2.jpg",
+      "/images/gallery/const-3.jpg",
+      "/images/gallery/const-4.jpg",
+      "/images/gallery/const-5.jpg",
+      "/images/gallery/const-6.jpg",
+      "/images/gallery/const-7.jpg",
+      "/images/gallery/const-8.jpg"
     ]
   },
   {
@@ -311,6 +345,10 @@ export const servicesList: ServiceClusterItem[] = [
       "AgriTech Automation & Soil Telemetry",
       "Pressurized Water Pipeline Networks",
       "Agricultural Modernization Consultancy"
+    ],
+    gallery: [
+      "/images/service-irrigation.jpg",
+      "/images/project-agriculture.jpg"
     ]
   },
   {
@@ -362,6 +400,11 @@ export const servicesList: ServiceClusterItem[] = [
       "Customs Brokerage and Trade Compliance",
       "Oversized Industrial Project Cargo",
       "Strategic Supply Chain Management"
+    ],
+    gallery: [
+      "/images/service-logistics.jpg",
+      "/images/hero-industrial.jpg",
+      "/images/project-cement.jpg"
     ]
   },
   {
@@ -413,6 +456,12 @@ export const servicesList: ServiceClusterItem[] = [
       "Sugar & Basic Food Commodity Distribution",
       "Gourmet Spices and High-End Ingredients",
       "Food Safety Certification and Logistics"
+    ],
+    gallery: [
+      "/images/gallery/food-nuts.jpg",
+      "/images/gallery/food-saffron.jpg",
+      "/images/gallery/food-spices.jpg",
+      "/images/gallery/food-paste.jpg"
     ]
   },
   {
@@ -516,6 +565,14 @@ export const servicesList: ServiceClusterItem[] = [
       "Backlit Translucent Onyx for Luxury Bars & Lobbies",
       "High-Durability Granite for Countertops & Public Spaces",
       "Professional Stone Installation and Sealing"
+    ],
+    gallery: [
+      "/images/gallery/stone-1.jpg",
+      "/images/gallery/stone-2.jpg",
+      "/images/gallery/stone-3.jpg",
+      "/images/gallery/stone-4.jpg",
+      "/images/gallery/stone-5.jpg",
+      "/images/gallery/stone-6.jpg"
     ]
   },
   {
@@ -567,6 +624,12 @@ export const servicesList: ServiceClusterItem[] = [
       "Drilling Rigs and Mineral Exploration Tools",
       "Manganese and High-Chrome Wear Castings",
       "Mine Ventilation and Underground Safety Systems"
+    ],
+    gallery: [
+      "/images/gallery/mining-1.jpg",
+      "/images/gallery/mining-2.jpg",
+      "/images/gallery/mining-3.jpg",
+      "/images/gallery/mining-4.jpg"
     ]
   },
   {
@@ -618,6 +681,14 @@ export const servicesList: ServiceClusterItem[] = [
       "Hospital-Grade Autoclaves and Plasma Sterilizers",
       "Operating Room Surgical Furniture & Lights",
       "Sterile Clinical Supplies and Personal Protective Gear"
+    ],
+    gallery: [
+      "/images/gallery/medical-1.jpg",
+      "/images/gallery/medical-2.jpg",
+      "/images/gallery/medical-3.jpg",
+      "/images/gallery/medical-4.jpg",
+      "/images/gallery/medical-5.jpg",
+      "/images/gallery/medical-6.jpg"
     ]
   }
 ];
