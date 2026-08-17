@@ -60,10 +60,6 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
                 <span className="text-gray-500">{dict.footer.euidLabel}:</span>
                 <span className="font-semibold text-white">{dict.company.euid}</span>
               </div>
-              <div className="flex justify-between">
-                <span className="text-gray-500">CAEN:</span>
-                <span className="font-semibold text-gold-400">6220 - IT Consultancy</span>
-              </div>
             </div>
 
             <div className="pt-1">
