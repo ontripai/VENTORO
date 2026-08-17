@@ -47,12 +47,19 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, lang }) => {
   const href = `/${lang}/${lang === 'ro' ? 'servicii' : 'services'}/${
     lang === 'ro' ? service.slugRo : service.slugEn
   }`;
+  const targetUrl = service.externalUrl || href;
+  const isExternal = Boolean(service.externalUrl);
   const btnLabel = lang === 'ro' ? 'Citește mai mult' : 'Read more';
 
   return (
     <div className="bg-[#141a24] rounded-xl overflow-hidden border border-gray-800 hover:border-gold-500/50 transition-all duration-300 group flex flex-col h-full shadow-lg hover:shadow-2xl hover:shadow-gold-500/10">
       {/* Image Thumbnail with Rollover */}
-      <Link href={href} className="relative block h-52 w-full overflow-hidden bg-gray-900">
+      <Link
+        href={targetUrl}
+        target={isExternal ? '_blank' : undefined}
+        rel={isExternal ? 'noopener noreferrer' : undefined}
+        className="relative block h-52 w-full overflow-hidden bg-gray-900"
+      >
         <Image
           src={service.image}
           alt={title}
@@ -72,7 +79,12 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, lang }) => {
       {/* Content Body */}
       <div className="p-6 flex flex-col flex-grow">
         {/* Title */}
-        <Link href={href} className="focus:outline-none">
+        <Link
+          href={targetUrl}
+          target={isExternal ? '_blank' : undefined}
+          rel={isExternal ? 'noopener noreferrer' : undefined}
+          className="focus:outline-none"
+        >
           <h3 className="font-heading text-lg font-bold text-white group-hover:text-gold-400 transition-colors mb-3 line-clamp-1">
             {title}
           </h3>
@@ -89,7 +101,9 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, lang }) => {
         {/* Read more button matching perdac.ro */}
         <div className="pt-2">
           <Link
-            href={href}
+            href={targetUrl}
+            target={isExternal ? '_blank' : undefined}
+            rel={isExternal ? 'noopener noreferrer' : undefined}
             className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold-400 hover:text-gold-300 group/btn"
           >
             <span>{btnLabel}</span>

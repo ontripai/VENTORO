@@ -97,11 +97,15 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, lang 
                   const href = `/${lang}/${lang === 'ro' ? 'servicii' : 'services'}/${
                     lang === 'ro' ? service.slugRo : service.slugEn
                   }`;
+                  const targetUrl = service.externalUrl || href;
+                  const isExternal = Boolean(service.externalUrl);
 
                   return (
                     <Link
                       key={service.id}
-                      href={href}
+                      href={targetUrl}
+                      target={isExternal ? '_blank' : undefined}
+                      rel={isExternal ? 'noopener noreferrer' : undefined}
                       onClick={onClose}
                       className="block p-3 rounded-lg bg-gray-900/60 hover:bg-gold-500/10 border border-gray-800 hover:border-gold-500/50 transition-all group"
                     >
@@ -136,10 +140,15 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, lang 
                   const href = `/${lang}/${lang === 'ro' ? 'servicii' : 'services'}/${
                     lang === 'ro' ? service.slugRo : service.slugEn
                   }`;
+                  const targetUrl = service.externalUrl || href;
+                  const isExternal = Boolean(service.externalUrl);
+
                   return (
                     <Link
                       key={service.id}
-                      href={href}
+                      href={targetUrl}
+                      target={isExternal ? '_blank' : undefined}
+                      rel={isExternal ? 'noopener noreferrer' : undefined}
                       onClick={onClose}
                       className="flex items-center justify-between p-2.5 rounded bg-gray-900/40 hover:bg-gray-800 text-xs text-gray-300 hover:text-gold-400 border border-gray-800/60"
                     >

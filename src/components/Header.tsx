@@ -157,11 +157,15 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
                             const serviceHref = `/${lang}/${
                               lang === 'ro' ? 'servicii' : 'services'
                             }/${lang === 'ro' ? service.slugRo : service.slugEn}`;
+                            const targetUrl = service.externalUrl || serviceHref;
+                            const isExternal = Boolean(service.externalUrl);
 
                             return (
                               <Link
                                 key={service.id}
-                                href={serviceHref}
+                                href={targetUrl}
+                                target={isExternal ? '_blank' : undefined}
+                                rel={isExternal ? 'noopener noreferrer' : undefined}
                                 className="p-2.5 rounded-lg hover:bg-gold-500/10 border border-transparent hover:border-gold-500/30 transition-all group/item block"
                               >
                                 <p className="text-xs font-semibold text-gray-200 group-hover/item:text-gold-400 leading-tight">
@@ -290,10 +294,15 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
                           const serviceHref = `/${lang}/${
                             lang === 'ro' ? 'servicii' : 'services'
                           }/${lang === 'ro' ? service.slugRo : service.slugEn}`;
+                          const targetUrl = service.externalUrl || serviceHref;
+                          const isExternal = Boolean(service.externalUrl);
+
                           return (
                             <Link
                               key={service.id}
-                              href={serviceHref}
+                              href={targetUrl}
+                              target={isExternal ? '_blank' : undefined}
+                              rel={isExternal ? 'noopener noreferrer' : undefined}
                               onClick={() => setIsMobileMenuOpen(false)}
                               className="text-xs py-1.5 text-gray-300 hover:text-gold-400"
                             >

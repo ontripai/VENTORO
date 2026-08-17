@@ -18,6 +18,7 @@ export interface ServiceClusterItem {
   specsEn: { label: string; value: string }[];
   clusterSubtopicsRo: string[];
   clusterSubtopicsEn: string[];
+  externalUrl?: string;
 }
 
 export interface NavItem {

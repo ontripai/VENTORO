@@ -164,7 +164,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ lang }) => {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="+40 728 000 000"
+              placeholder="+40 725 880 000"
               className="w-full bg-[#0c1017] border border-gray-700 focus:border-gold-500 rounded-lg px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none transition-colors"
             />
           </div>

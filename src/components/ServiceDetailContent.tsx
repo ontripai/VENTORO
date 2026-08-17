@@ -175,11 +175,15 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
                     const itemHref = `/${lang}/${
                       lang === 'ro' ? 'servicii' : 'services'
                     }/${lang === 'ro' ? item.slugRo : item.slugEn}`;
+                    const targetUrl = item.externalUrl || itemHref;
+                    const isExternal = Boolean(item.externalUrl);
 
                     return (
                       <li key={item.id}>
                         <Link
-                          href={itemHref}
+                          href={targetUrl}
+                          target={isExternal ? '_blank' : undefined}
+                          rel={isExternal ? 'noopener noreferrer' : undefined}
                           className={`flex items-center justify-between p-2.5 rounded-lg font-medium transition-all ${
                             isCurrent
                               ? 'bg-gold-500 text-black font-bold shadow-md'

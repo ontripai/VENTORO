@@ -464,7 +464,8 @@ export const servicesList: ServiceClusterItem[] = [
       "Museum-Grade Rug Cleaning and Restoration",
       "Luxury Interior Design and Curated Décor",
       "Handcrafted Oriental Art Objects"
-    ]
+    ],
+    externalUrl: "https://covoarepersane.ro/"
   },
   {
     id: "piatra-naturala",
