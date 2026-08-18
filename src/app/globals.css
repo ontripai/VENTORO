@@ -3,113 +3,21 @@
 @tailwind utilities;
 
 @layer base {
-  /* Default: Modern Slate Theme */
-  :root,
-  [data-theme="slate"] {
-    --bg-page: #1a2230;
-    --bg-section-alt: #141c28;
-    --bg-card: #222c3d;
-    --bg-card-subtle: #18202d;
-    --bg-header: #1a2230;
-    --bg-topbar: #151c27;
-    --bg-footer: #111827;
-    --bg-subfooter: #0b0f19;
-    --bg-dropdown: #1e2838;
-    --border-main: #334155;
-    --border-card: #3b485d;
-    --text-heading: #ffffff;
-    --text-primary: #f1f5f9;
-    --text-secondary: #cbd5e1;
-    --text-muted: #94a3b8;
-    --input-bg: #161e2b;
-    --input-border: #475569;
-    --badge-bg: rgba(255, 192, 0, 0.1);
-    --badge-text: #ffd014;
-    --badge-border: rgba(255, 192, 0, 0.3);
-    --gold-accent: #ffc000;
-  }
-
-  /* Theme 1: Clean European White */
-  [data-theme="light"] {
-    --bg-page: #f8fafc;
-    --bg-section-alt: #ffffff;
-    --bg-card: #ffffff;
-    --bg-card-subtle: #f1f5f9;
-    --bg-header: #ffffff;
-    --bg-topbar: #f1f5f9;
-    --bg-footer: #111827;
-    --bg-subfooter: #0b0f19;
-    --bg-dropdown: #ffffff;
-    --border-main: #e2e8f0;
-    --border-card: #e2e8f0;
-    --text-heading: #0f172a;
-    --text-primary: #1e293b;
-    --text-secondary: #475569;
-    --text-muted: #64748b;
-    --input-bg: #ffffff;
-    --input-border: #cbd5e1;
-    --badge-bg: rgba(212, 175, 55, 0.12);
-    --badge-text: #b8860b;
-    --badge-border: rgba(212, 175, 55, 0.4);
-    --gold-accent: #c59b27;
-  }
-
-  /* Theme 2: Hybrid Luxury (Dark Header & Footer + Light Body) */
-  [data-theme="hybrid"] {
-    --bg-page: #f8fafc;
-    --bg-section-alt: #ffffff;
-    --bg-card: #ffffff;
-    --bg-card-subtle: #f1f5f9;
-    --bg-header: #111827;
-    --bg-topbar: #0b0f19;
-    --bg-footer: #111827;
-    --bg-subfooter: #0b0f19;
-    --bg-dropdown: #1f2937;
-    --border-main: #e2e8f0;
-    --border-card: #e2e8f0;
-    --text-heading: #0f172a;
-    --text-primary: #1e293b;
-    --text-secondary: #475569;
-    --text-muted: #64748b;
-    --input-bg: #ffffff;
-    --input-border: #cbd5e1;
-    --badge-bg: rgba(212, 175, 55, 0.14);
-    --badge-text: #b8860b;
-    --badge-border: rgba(212, 175, 55, 0.4);
-    --gold-accent: #c59b27;
-  }
-
-  /* Theme 4: Deep Obsidian Black & Gold (Previous Theme) */
-  [data-theme="obsidian"] {
-    --bg-page: #0f141c;
-    --bg-section-alt: #0c1017;
-    --bg-card: #141a24;
-    --bg-card-subtle: #0a0d13;
-    --bg-header: #0f141c;
-    --bg-topbar: #0b0e14;
-    --bg-footer: #0b0e14;
-    --bg-subfooter: #07090e;
-    --bg-dropdown: #0e131b;
-    --border-main: #1f2937;
-    --border-card: #2a3447;
-    --text-heading: #ffffff;
-    --text-primary: #f3f4f6;
-    --text-secondary: #9ca3af;
-    --text-muted: #6b7280;
-    --input-bg: #0c1017;
-    --input-border: #374151;
-    --badge-bg: rgba(255, 192, 0, 0.1);
-    --badge-text: #ffd014;
-    --badge-border: rgba(255, 192, 0, 0.3);
+  :root {
+    --primary: #ffc000;
+    --primary-dark: #d4af37;
+    --background: #1a2230;
+    --foreground: #f8fafc;
+    --card: #222c3d;
+    --card-border: rgba(71, 85, 105, 0.8);
     --gold-accent: #ffc000;
   }
 
   body {
-    background-color: var(--bg-page);
-    color: var(--text-primary);
+    background-color: #1a2230;
+    color: #f1f5f9;
     font-family: 'Montserrat', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
-    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -124,351 +32,34 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-section-alt);
+  background: #141c28;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border-main);
+  background: #3b4960;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--gold-accent);
+  background: #ffc000;
 }
 
-/* ==========================================================================
-   1. HERO SLIDER, CTA BANNER & HEADER BANNERS (ALWAYS CRISP WHITE & GOLD TEXT)
-   ========================================================================== */
-.hero-slider h1,
-.hero-slider h2,
-.hero-slider h3,
-.hero-slider .font-heading,
-.hero-slider .text-white,
-.page-header-banner h1,
-.page-header-banner h2,
-.page-header-banner h3,
-.page-header-banner .font-heading,
-.page-header-banner .text-white,
-.cta-banner h1,
-.cta-banner h2,
-.cta-banner h3,
-.cta-banner h4,
-.cta-banner .font-heading,
-.cta-banner .text-white {
-  color: #ffffff !important;
+/* Gold Accent Underline animation */
+.hover-gold-underline {
+  position: relative;
 }
 
-.hero-slider p,
-.page-header-banner p,
-.cta-banner p {
-  color: #f1f5f9 !important;
+.hover-gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffc000;
+  transition: width 0.3s ease-in-out;
 }
 
-.hero-slider span.text-gold-400,
-.hero-slider span.text-gold-500,
-.page-header-banner span.text-gold-400,
-.page-header-banner span.text-gold-500,
-.cta-banner span.text-gold-400,
-.cta-banner span.text-gold-500 {
-  color: #ffd014 !important;
+.hover-gold-underline:hover::after {
+  width: 100%;
 }
-
-/* ==========================================================================
-   2. SITE FOOTER: ALWAYS SLEEK EXECUTIVE DARK IN ALL THEMES
-   ========================================================================== */
-footer.site-footer,
-.site-footer {
-  background-color: #111827 !important;
-  color: #cbd5e1 !important;
-  border-top: 1px solid #1f2937 !important;
-}
-
-footer.site-footer h3,
-footer.site-footer .font-heading,
-footer.site-footer strong,
-footer.site-footer span.text-white,
-footer.site-footer a.text-white {
-  color: #ffffff !important;
-}
-
-footer.site-footer p,
-footer.site-footer span,
-footer.site-footer li,
-footer.site-footer a {
-  color: #cbd5e1 !important;
-}
-
-footer.site-footer a:hover {
-  color: #ffd014 !important;
-}
-
-footer.site-footer .bg-gray-900\/60,
-footer.site-footer .bg-slate-900\/60,
-footer.site-footer .bg-black {
-  background-color: #1e293b !important;
-  border-color: #334155 !important;
-}
-
-footer.site-footer .bg-gray-900\/60 span.text-white {
-  color: #ffffff !important;
-}
-
-footer.site-footer .bg-gray-900\/60 span.text-gray-500 {
-  color: #94a3b8 !important;
-}
-
-footer.site-footer .bg-\[\#0f1520\],
-footer.site-footer .bg-\[\#07090e\] {
-  background-color: #0b0f19 !important;
-  border-top: 1px solid #1f2937 !important;
-}
-
-footer.site-footer .bg-\[\#0f1520\] p,
-footer.site-footer .bg-\[\#0f1520\] span,
-footer.site-footer .bg-\[\#0f1520\] a {
-  color: #94a3b8 !important;
-}
-
-footer.site-footer .bg-\[\#0f1520\] a:hover {
-  color: #ffd014 !important;
-}
-
-/* ==========================================================================
-   3. SITE HEADER: PRECISE STYLING ACROSS THEMES
-   ========================================================================== */
-/* Light Theme Header */
-[data-theme="light"] header.site-header {
-  background-color: #ffffff !important;
-  border-bottom: 1px solid #e2e8f0 !important;
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
-}
-
-[data-theme="light"] header.site-header .brand-text {
-  color: #0f172a !important;
-}
-
-[data-theme="light"] header.site-header .nav-link {
-  color: #0f172a !important;
-  font-weight: 600 !important;
-}
-
-[data-theme="light"] header.site-header .nav-link:hover {
-  color: #c59b27 !important;
-}
-
-[data-theme="light"] header.site-header .active-link {
-  color: #c59b27 !important;
-  font-weight: 800 !important;
-}
-
-[data-theme="light"] header.site-header .active-bar {
-  background-color: #c59b27 !important;
-}
-
-[data-theme="light"] header.site-header .logo-box {
-  background-color: #f1f5f9 !important;
-  border-color: #cbd5e1 !important;
-}
-
-[data-theme="light"] header.site-header .dropdown-menu {
-  background-color: #ffffff !important;
-  border-color: #e2e8f0 !important;
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15) !important;
-}
-
-[data-theme="light"] header.site-header .dropdown-menu p.text-gray-200 {
-  color: #0f172a !important;
-}
-
-[data-theme="light"] header.site-header .dropdown-menu p.text-gray-500 {
-  color: #64748b !important;
-}
-
-[data-theme="light"] header.site-header button,
-[data-theme="light"] header.site-header .text-gray-300 {
-  color: #0f172a !important;
-}
-
-/* Hybrid Theme Header */
-[data-theme="hybrid"] header.site-header {
-  background-color: #111827 !important;
-  border-bottom: 1px solid #1f2937 !important;
-}
-
-[data-theme="hybrid"] header.site-header .brand-text {
-  color: #ffffff !important;
-}
-
-[data-theme="hybrid"] header.site-header .nav-link {
-  color: #ffffff !important;
-  font-weight: 600 !important;
-}
-
-[data-theme="hybrid"] header.site-header .nav-link:hover {
-  color: #ffd014 !important;
-}
-
-[data-theme="hybrid"] header.site-header .active-link {
-  color: #ffd014 !important;
-  font-weight: 800 !important;
-}
-
-[data-theme="hybrid"] header.site-header .dropdown-menu {
-  background-color: #1f2937 !important;
-  border-color: #374151 !important;
-}
-
-[data-theme="hybrid"] header.site-header .dropdown-menu p.text-gray-200 {
-  color: #ffffff !important;
-}
-
-/* Slate & Obsidian Header Defaults */
-[data-theme="slate"] header.site-header,
-[data-theme="obsidian"] header.site-header {
-  .brand-text { color: #ffffff !important; }
-  .nav-link { color: #e2e8f0 !important; }
-  .active-link { color: #ffd014 !important; }
-}
-
-/* ==========================================================================
-   4. SITE TOPBAR
-   ========================================================================== */
-[data-theme="light"] .site-topbar {
-  background-color: #f1f5f9 !important;
-  border-bottom: 1px solid #e2e8f0 !important;
-  color: #334155 !important;
-}
-
-[data-theme="light"] .site-topbar a,
-[data-theme="light"] .site-topbar span {
-  color: #334155 !important;
-}
-
-[data-theme="hybrid"] .site-topbar,
-[data-theme="slate"] .site-topbar,
-[data-theme="obsidian"] .site-topbar {
-  background-color: #0b0f19 !important;
-  border-bottom: 1px solid #1f2937 !important;
-  color: #cbd5e1 !important;
-}
-
-[data-theme="hybrid"] .site-topbar a,
-[data-theme="hybrid"] .site-topbar span {
-  color: #cbd5e1 !important;
-}
-
-/* ==========================================================================
-   5. BODY & CONTENT SECTIONS IN LIGHT & HYBRID THEMES
-   ========================================================================== */
-[data-theme="light"] main,
-[data-theme="hybrid"] main {
-  background-color: #f8fafc !important;
-}
-
-[data-theme="light"] .bg-\[\#1a2230\],
-[data-theme="hybrid"] .bg-\[\#1a2230\],
-[data-theme="light"] .bg-\[\#0f141c\],
-[data-theme="hybrid"] .bg-\[\#0f141c\] {
-  background-color: #f8fafc !important;
-}
-
-[data-theme="light"] .bg-\[\#141c28\],
-[data-theme="hybrid"] .bg-\[\#141c28\],
-[data-theme="light"] .bg-\[\#0c1017\],
-[data-theme="hybrid"] .bg-\[\#0c1017\],
-[data-theme="light"] .bg-\[\#0d1118\],
-[data-theme="hybrid"] .bg-\[\#0d1118\] {
-  background-color: #ffffff !important;
-  border-color: #e2e8f0 !important;
-}
-
-/* Light / Hybrid Content Cards */
-[data-theme="light"] .bg-\[\#222c3d\],
-[data-theme="hybrid"] .bg-\[\#222c3d\],
-[data-theme="light"] .bg-\[\#141a24\],
-[data-theme="hybrid"] .bg-\[\#141a24\] {
-  background-color: #ffffff !important;
-  border-color: #e2e8f0 !important;
-  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06) !important;
-}
-
-/* Headings in Light & Hybrid content sections */
-[data-theme="light"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h2,
-[data-theme="hybrid"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h2,
-[data-theme="light"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h3,
-[data-theme="hybrid"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h3,
-[data-theme="light"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h4,
-[data-theme="hybrid"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h4,
-[data-theme="light"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h5,
-[data-theme="hybrid"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h5,
-[data-theme="light"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) .font-heading,
-[data-theme="hybrid"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) .font-heading {
-  color: #0f172a !important;
-}
-
-/* Paragraphs & descriptions in Light & Hybrid */
-[data-theme="light"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) p,
-[data-theme="hybrid"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) p,
-[data-theme="light"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) span:not(.text-gold-400):not(.text-gold-500):not(.bg-gold-500),
-[data-theme="hybrid"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) span:not(.text-gold-400):not(.text-gold-500):not(.bg-gold-500) {
-  color: #334155 !important;
-}
-
-[data-theme="light"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) .text-white,
-[data-theme="hybrid"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) .text-white {
-  color: #0f172a !important;
-}
-
-/* Tables in Light & Hybrid */
-[data-theme="light"] table tbody tr,
-[data-theme="hybrid"] table tbody tr {
-  background-color: #ffffff !important;
-  border-color: #e2e8f0 !important;
-}
-
-[data-theme="light"] table td.bg-slate-900\/40,
-[data-theme="hybrid"] table td.bg-slate-900\/40,
-[data-theme="light"] table td.bg-gray-900\/40,
-[data-theme="hybrid"] table td.bg-gray-900\/40 {
-  background-color: #f1f5f9 !important;
-  color: #0f172a !important;
-}
-
-[data-theme="light"] table td,
-[data-theme="hybrid"] table td {
-  color: #334155 !important;
-  border-color: #e2e8f0 !important;
-}
-
-/* Inputs in Light & Hybrid */
-[data-theme="light"] input,
-[data-theme="hybrid"] input,
-[data-theme="light"] select,
-[data-theme="hybrid"] select,
-[data-theme="light"] textarea,
-[data-theme="hybrid"] textarea {
-  background-color: #ffffff !important;
-  color: #0f172a !important;
-  border-color: #cbd5e1 !important;
-}
-
-/* Slate & Obsidian Base Classes */
-[data-theme="slate"] .bg-\[\#1a2230\] { background-color: #1a2230 !important; }
-[data-theme="slate"] .bg-\[\#222c3d\] { background-color: #222c3d !important; }
-[data-theme="slate"] .bg-\[\#141c28\] { background-color: #141c28 !important; }
-[data-theme="slate"] .bg-\[\#151c27\] { background-color: #151c27 !important; }
-[data-theme="slate"] .bg-\[\#1e2838\] { background-color: #1e2838 !important; }
-[data-theme="slate"] .bg-\[\#161e2b\] { background-color: #161e2b !important; }
-
-[data-theme="obsidian"] .bg-\[\#1a2230\],
-[data-theme="obsidian"] .bg-\[\#0f141c\] { background-color: #0f141c !important; }
-[data-theme="obsidian"] .bg-\[\#222c3d\],
-[data-theme="obsidian"] .bg-\[\#141a24\] { background-color: #141a24 !important; }
-[data-theme="obsidian"] .bg-\[\#141c28\],
-[data-theme="obsidian"] .bg-\[\#0c1017\] { background-color: #0c1017 !important; }
-[data-theme="obsidian"] .bg-\[\#151c27\],
-[data-theme="obsidian"] .bg-\[\#111620\],
-[data-theme="obsidian"] .bg-\[\#0b0e14\] { background-color: #0b0e14 !important; }
-[data-theme="obsidian"] .bg-\[\#1e2838\],
-[data-theme="obsidian"] .bg-\[\#0e131b\] { background-color: #0e131b !important; }
-[data-theme="obsidian"] .bg-\[\#161e2b\] { background-color: #0c1017 !important; }
