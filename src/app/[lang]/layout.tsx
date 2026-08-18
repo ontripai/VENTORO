@@ -6,6 +6,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { CookieBanner } from '@/components/CookieBanner';
 import { StructuredData } from '@/components/StructuredData';
+import { ThemeSelector } from '@/components/ThemeSelector';
 
 export async function generateStaticParams() {
   return [{ lang: 'ro' }, { lang: 'en' }];
@@ -34,6 +35,7 @@ export default async function LocalizedLayout({
       <main className="flex-grow flex flex-col">{children}</main>
       <Footer lang={lang} />
       <CookieBanner lang={lang} />
+      <ThemeSelector lang={lang} />
     </>
   );
 }
