@@ -13,15 +13,56 @@ export async function generateMetadata({
   const lang: Language = rawLang === 'en' ? 'en' : 'ro';
   const dict = getDictionary(lang);
 
+  const title =
+    lang === 'ro'
+      ? 'Domenii & Servicii Industriale & IT – Portofoliu Complet | VENTORO'
+      : 'Industrial & IT Engineering Services – Complete Portfolio | VENTORO';
+  const desc =
+    lang === 'ro'
+      ? 'Explorați cele 12 divizii strategice VENTORO: Consultanță IT CAEN 6220, Energie, Petrol & Gaze, Construcții, Echipamente Medicale, Metalurgie și Comerț Internațional.'
+      : 'Explore the 12 strategic divisions of VENTORO: IT Consulting NACE 6220, Energy, Oil & Gas, Construction, Medical Equipment, Metallurgy, and International Trade.';
+
   return {
-    title: `${dict.servicesSection.title} | ${dict.company.legalName}`,
-    description: dict.servicesSection.subtitle,
+    title,
+    description: desc,
+    keywords: [
+      lang === 'ro' ? 'servicii industriale Romania' : 'industrial services Europe',
+      lang === 'ro' ? 'consultanta IT Bucuresti' : 'IT consulting Romania',
+      'energie regenerabila',
+      'petrol si gaze',
+      'aparatura medicala',
+      'constructii industriale',
+      'VENTORO servicii',
+    ],
     alternates: {
-      canonical: `https://ventoro.ro/${lang}/${lang === 'ro' ? 'servicii' : 'services'}`,
+      canonical: `https://ventoro.ro/${lang}/servicii`,
       languages: {
-        ro: 'https://ventoro.ro/ro/servicii',
-        en: 'https://ventoro.ro/en/services',
+        'ro-RO': 'https://ventoro.ro/ro/servicii',
+        'en-US': 'https://ventoro.ro/en/services',
+        'x-default': 'https://ventoro.ro/ro/servicii',
       },
+    },
+    openGraph: {
+      title,
+      description: desc,
+      url: `https://ventoro.ro/${lang}/servicii`,
+      siteName: 'VENTORO S.R.L.',
+      images: [
+        {
+          url: 'https://ventoro.ro/images/hero-industrial.jpg',
+          width: 1200,
+          height: 630,
+          alt: 'Domenii & Servicii VENTORO S.R.L.',
+        },
+      ],
+      locale: lang === 'ro' ? 'ro_RO' : 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: desc,
+      images: ['https://ventoro.ro/images/hero-industrial.jpg'],
     },
   };
 }

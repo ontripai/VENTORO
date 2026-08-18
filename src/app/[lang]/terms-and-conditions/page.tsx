@@ -1,8 +1,8 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { Language } from '@/types';
-import { getDictionary } from '@/lib/i18n';
 import { TermsPageContent } from '@/components/TermsPageContent';
+import { StructuredData } from '@/components/StructuredData';
 
 export async function generateMetadata({
   params,
@@ -11,17 +11,38 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang: rawLang } = await params;
   const lang: Language = rawLang === 'en' ? 'en' : 'ro';
-  const dict = getDictionary(lang);
+
+  const title =
+    lang === 'en'
+      ? 'Terms and Conditions & Privacy Policy | VENTORO S.R.L.'
+      : 'Termeni și Condiții & Politica de Confidențialitate | VENTORO S.R.L.';
+  const desc =
+    lang === 'en'
+      ? 'General terms and conditions of website use, GDPR privacy policy, and corporate identification details of VENTORO S.R.L.'
+      : 'Condițiile generale de utilizare a site-ului web ventoro.ro, politica de protecție a datelor (GDPR) și datele de identificare fiscală ale companiei VENTORO S.R.L.';
 
   return {
-    title: `${dict.nav.terms} | ${dict.company.legalName}`,
-    description: dict.siteDescription,
+    title,
+    description: desc,
     alternates: {
-      canonical: `https://ventoro.ro/${lang}/${lang === 'ro' ? 'termeni-si-conditii' : 'terms-and-conditions'}`,
+      canonical: `https://ventoro.ro/${lang}/terms-and-conditions`,
       languages: {
-        ro: 'https://ventoro.ro/ro/termeni-si-conditii',
-        en: 'https://ventoro.ro/en/terms-and-conditions',
+        'ro-RO': 'https://ventoro.ro/ro/termeni-si-conditii',
+        'en-US': 'https://ventoro.ro/en/terms-and-conditions',
+        'x-default': 'https://ventoro.ro/ro/termeni-si-conditii',
       },
+    },
+    openGraph: {
+      title,
+      description: desc,
+      url: `https://ventoro.ro/${lang}/terms-and-conditions`,
+      siteName: 'VENTORO S.R.L.',
+      locale: lang === 'en' ? 'en_US' : 'ro_RO',
+      type: 'website',
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }
@@ -33,5 +54,16 @@ export default async function TermsAndConditionsPage({
 }) {
   const { lang: rawLang } = await params;
   const lang: Language = rawLang === 'en' ? 'en' : 'ro';
-  return <TermsPageContent lang={lang} />;
+  return (
+    <>
+      <StructuredData
+        type="BreadcrumbList"
+        breadcrumbs={[
+          { name: lang === 'en' ? 'Home' : 'Acasă', item: `/${lang}` },
+          { name: lang === 'en' ? 'Terms & Conditions' : 'Termeni și Condiții', item: `/${lang}/terms-and-conditions` },
+        ]}
+      />
+      <TermsPageContent lang={lang} />
+    </>
+  );
 }

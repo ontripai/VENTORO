@@ -1,0 +1,21 @@
+{
+  "name": "VENTORO S.R.L. – BE THE BEST",
+  "short_name": "VENTORO",
+  "description": "Consultanță IT & Echipamente Industriale de Înaltă Performanță",
+  "start_url": "/ro",
+  "display": "standalone",
+  "background_color": "#1a2230",
+  "theme_color": "#ffc000",
+  "icons": [
+    {
+      "src": "/images/logo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/images/logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

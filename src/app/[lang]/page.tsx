@@ -12,6 +12,8 @@ import { AboutPreview } from '@/components/AboutPreview';
 import { PrinciplesSection } from '@/components/PrinciplesSection';
 import { CtaBanner } from '@/components/CtaBanner';
 
+import { StructuredData } from '@/components/StructuredData';
+
 export async function generateMetadata({
   params,
 }: {
@@ -21,31 +23,58 @@ export async function generateMetadata({
   const lang: Language = rawLang === 'en' ? 'en' : 'ro';
   const dict = getDictionary(lang);
 
+  const title =
+    lang === 'ro'
+      ? 'VENTORO S.R.L. – BE THE BEST | Consultanță IT & Echipamente Industriale'
+      : 'VENTORO S.R.L. – BE THE BEST | IT Consulting & Industrial Solutions';
+  const desc =
+    lang === 'ro'
+      ? 'Partener strategic în consultanță IT (CAEN 6220), transformare digitală, furnizare de echipamente industriale, energie, construcții, petrol & gaze și comerț internațional România-Austria.'
+      : 'Strategic partner in IT consulting (NACE 6220), digital transformation, industrial equipment, energy, construction, oil & gas, and international trade Romania-Austria.';
+
   return {
-    title: dict.siteTitle,
-    description: dict.siteDescription,
+    title: {
+      absolute: title,
+    },
+    description: desc,
+    keywords: [
+      lang === 'ro' ? 'consultanță IT București' : 'IT consulting Romania',
+      'CAEN 6220',
+      'CUI 46012496',
+      lang === 'ro' ? 'echipamente industriale' : 'industrial equipment supplier',
+      lang === 'ro' ? 'industria energetică' : 'energy industry solutions',
+      lang === 'ro' ? 'comerț internațional România Austria' : 'international trade Romania Austria',
+      'VENTORO SRL',
+    ],
     alternates: {
       canonical: `https://ventoro.ro/${lang}`,
       languages: {
-        ro: 'https://ventoro.ro/ro',
-        en: 'https://ventoro.ro/en',
+        'ro-RO': 'https://ventoro.ro/ro',
+        'en-US': 'https://ventoro.ro/en',
+        'x-default': 'https://ventoro.ro/ro',
       },
     },
     openGraph: {
-      title: dict.siteTitle,
-      description: dict.siteDescription,
+      title,
+      description: desc,
       url: `https://ventoro.ro/${lang}`,
       siteName: 'VENTORO S.R.L.',
       images: [
         {
           url: 'https://ventoro.ro/images/logo.jpeg',
           width: 1200,
-          height: 800,
-          alt: 'VENTORO S.R.L. - BE THE BEST',
+          height: 630,
+          alt: 'VENTORO S.R.L. – BE THE BEST',
         },
       ],
       locale: lang === 'ro' ? 'ro_RO' : 'en_US',
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: desc,
+      images: ['https://ventoro.ro/images/logo.jpeg'],
     },
   };
 }
@@ -61,6 +90,7 @@ export default async function HomePage({
 
   return (
     <div className="flex flex-col w-full">
+      <StructuredData type="WebSite" />
       {/* Hero Slider */}
       <HeroSlider lang={lang} />
 
