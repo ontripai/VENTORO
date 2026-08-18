@@ -29,7 +29,7 @@ export const CollaborationPageContent: React.FC<CollaborationPageContentProps> =
   return (
     <div className="flex flex-col w-full bg-[#1a2230]">
       {/* Header Banner */}
-      <section className="relative py-20 bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('/images/collaboration-partner.jpg')" }}>
+      <section className="page-header-banner relative py-20 bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('/images/collaboration-partner.jpg')" }}>
         <div className="absolute inset-0 bg-black/85 backdrop-blur-xs" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Breadcrumbs items={breadcrumbs} lang={lang} />

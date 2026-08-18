@@ -29,7 +29,6 @@
     --badge-text: #ffd014;
     --badge-border: rgba(255, 192, 0, 0.3);
     --gold-accent: #ffc000;
-    --hero-overlay: rgba(0, 0, 0, 0.75);
     --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
   }
 
@@ -58,7 +57,6 @@
     --badge-text: #b8860b;
     --badge-border: rgba(212, 175, 55, 0.4);
     --gold-accent: #c59b27;
-    --hero-overlay: rgba(15, 23, 42, 0.65);
     --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
   }
 
@@ -87,7 +85,6 @@
     --badge-text: #b8860b;
     --badge-border: rgba(212, 175, 55, 0.4);
     --gold-accent: #c59b27;
-    --hero-overlay: rgba(0, 0, 0, 0.7);
     --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1);
   }
 
@@ -116,7 +113,6 @@
     --badge-text: #ffd014;
     --badge-border: rgba(255, 192, 0, 0.3);
     --gold-accent: #ffc000;
-    --hero-overlay: rgba(0, 0, 0, 0.85);
     --card-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.5);
   }
 
@@ -125,7 +121,7 @@
     color: var(--text-primary);
     font-family: 'Montserrat', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -152,165 +148,385 @@
   background: var(--gold-accent);
 }
 
-/* Dynamic Classes using CSS Variables */
-.theme-page-bg {
-  background-color: var(--bg-page) !important;
-  color: var(--text-primary) !important;
-}
-
-.theme-section-alt {
-  background-color: var(--bg-section-alt) !important;
-}
-
-.theme-card-bg {
-  background-color: var(--bg-card) !important;
-  border-color: var(--border-card) !important;
-  box-shadow: var(--card-shadow);
-}
-
-.theme-topbar-bg {
-  background-color: var(--bg-topbar) !important;
-  border-color: var(--border-main) !important;
-}
-
-.theme-footer-bg {
-  background-color: var(--bg-footer) !important;
-  border-color: var(--border-main) !important;
-}
-
-.theme-subfooter-bg {
-  background-color: var(--bg-subfooter) !important;
-  border-color: var(--border-main) !important;
-}
-
-.theme-text-heading {
-  color: var(--text-heading) !important;
-}
-
-.theme-text-desc {
-  color: var(--text-secondary) !important;
-}
-
-.theme-text-muted {
-  color: var(--text-muted) !important;
-}
-
-.theme-border {
-  border-color: var(--border-main) !important;
-}
-
-.theme-input {
-  background-color: var(--input-bg) !important;
-  border-color: var(--input-border) !important;
-  color: var(--text-primary) !important;
-}
-
-.theme-badge {
-  background-color: var(--badge-bg) !important;
-  color: var(--badge-text) !important;
-  border-color: var(--badge-border) !important;
-}
-
-/* Universal Multi-Theme Overrides */
-[data-theme] .bg-\[\#1a2230\],
-[data-theme] .bg-\[\#0f141c\] {
-  background-color: var(--bg-page) !important;
-}
-
-[data-theme] .bg-\[\#222c3d\],
-[data-theme] .bg-\[\#141a24\] {
-  background-color: var(--bg-card) !important;
-  border-color: var(--border-card) !important;
-}
-
-[data-theme] .bg-\[\#141c28\],
-[data-theme] .bg-\[\#0c1017\],
-[data-theme] .bg-\[\#0d1118\] {
-  background-color: var(--bg-section-alt) !important;
-}
-
-[data-theme] .bg-\[\#151c27\],
-[data-theme] .bg-\[\#111620\] {
-  background-color: var(--bg-topbar) !important;
-}
-
-[data-theme] .bg-\[\#1e2838\],
-[data-theme] .bg-\[\#0e131b\] {
-  background-color: var(--bg-dropdown) !important;
-}
-
-[data-theme] .bg-\[\#161e2b\] {
-  background-color: var(--input-bg) !important;
-}
-
-[data-theme] .border-slate-700,
-[data-theme] .border-slate-700\/80,
-[data-theme] .border-slate-700\/60,
-[data-theme] .border-gray-800,
-[data-theme] .border-gray-800\/80,
-[data-theme] .border-gray-800\/60,
-[data-theme] .border-slate-600 {
-  border-color: var(--border-main) !important;
-}
-
-/* Light & Hybrid text contrast enhancements */
-[data-theme="light"] h1,
-[data-theme="light"] h2,
-[data-theme="light"] h3,
-[data-theme="light"] h4,
-[data-theme="light"] h5,
-[data-theme="light"] h6,
-[data-theme="light"] .font-heading,
-[data-theme="light"] .text-white {
-  color: var(--text-heading);
-}
-
-[data-theme="light"] p.text-gray-300,
-[data-theme="light"] p.text-gray-400,
-[data-theme="light"] span.text-gray-300,
-[data-theme="light"] span.text-gray-400,
-[data-theme="light"] div.text-gray-300,
-[data-theme="light"] div.text-gray-400 {
-  color: var(--text-secondary);
-}
-
-[data-theme="light"] footer,
-[data-theme="light"] footer .text-white {
+/* ==========================================================================
+   HERO SLIDER, PAGE BANNERS & CTA BANNERS MUST ALWAYS HAVE CRISP WHITE TEXT
+   ========================================================================== */
+.hero-slider,
+.hero-slider h1,
+.hero-slider h2,
+.hero-slider h3,
+.hero-slider p,
+.hero-slider span,
+.hero-slider .font-heading,
+.hero-slider .text-white,
+.page-header-banner,
+.page-header-banner h1,
+.page-header-banner h2,
+.page-header-banner h3,
+.page-header-banner p,
+.page-header-banner span,
+.page-header-banner .font-heading,
+.page-header-banner .text-white,
+.cta-banner,
+.cta-banner h1,
+.cta-banner h2,
+.cta-banner h3,
+.cta-banner p,
+.cta-banner span,
+.cta-banner .font-heading,
+.cta-banner .text-white {
   color: #ffffff !important;
 }
 
-[data-theme="light"] footer .text-gray-400,
-[data-theme="light"] footer .text-gray-500 {
-  color: #94a3b8 !important;
+.hero-slider p,
+.page-header-banner p,
+.cta-banner p {
+  color: #e2e8f0 !important;
 }
 
-[data-theme="hybrid"] main h1,
-[data-theme="hybrid"] main h2,
-[data-theme="hybrid"] main h3,
-[data-theme="hybrid"] main h4,
-[data-theme="hybrid"] main h5,
-[data-theme="hybrid"] main h6,
-[data-theme="hybrid"] main .font-heading,
-[data-theme="hybrid"] main .text-white {
-  color: var(--text-heading);
+.hero-slider .text-gold-400,
+.page-header-banner .text-gold-400,
+.cta-banner .text-gold-400 {
+  color: #ffd014 !important;
 }
 
-[data-theme="hybrid"] main p.text-gray-300,
-[data-theme="hybrid"] main p.text-gray-400,
-[data-theme="hybrid"] main span.text-gray-300,
-[data-theme="hybrid"] main span.text-gray-400,
-[data-theme="hybrid"] main div.text-gray-300,
-[data-theme="hybrid"] main div.text-gray-400 {
-  color: var(--text-secondary);
+/* ==========================================================================
+   THEME 1: PURE LIGHT THEME (Clean European White Corporate)
+   ========================================================================== */
+[data-theme="light"] {
+  /* Header & Navigation in Light Mode */
+  header {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  header .font-heading,
+  header span.text-white,
+  header a.text-white,
+  header nav a {
+    color: #0f172a !important;
+  }
+
+  header nav a:hover,
+  header nav a.text-gold-400 {
+    color: #c59b27 !important;
+  }
+
+  header .text-gray-200,
+  header .text-gray-300 {
+    color: #334155 !important;
+  }
+
+  header .bg-black\/60 {
+    background-color: #f1f5f9 !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  header .bg-\[\#1e2838\],
+  header .bg-\[\#0e131b\] {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  header .bg-\[\#1e2838\] span.text-white,
+  header .bg-\[\#1e2838\] p {
+    color: #0f172a !important;
+  }
+
+  /* TopBar in Light Mode */
+  .bg-\[\#151c27\],
+  .bg-\[\#111620\] {
+    background-color: #f1f5f9 !important;
+    color: #334155 !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  .bg-\[\#151c27\] span,
+  .bg-\[\#151c27\] a,
+  .bg-\[\#111620\] span,
+  .bg-\[\#111620\] a {
+    color: #334155 !important;
+  }
+
+  .bg-\[\#151c27\] a:hover,
+  .bg-\[\#111620\] a:hover {
+    color: #c59b27 !important;
+  }
+
+  /* Main Body Content & Sections */
+  main,
+  .bg-\[\#1a2230\],
+  .bg-\[\#0f141c\] {
+    background-color: #f8fafc !important;
+    color: #1e293b !important;
+  }
+
+  /* Alternating Sections */
+  .bg-\[\#141c28\],
+  .bg-\[\#0c1017\],
+  .bg-\[\#0d1118\] {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  /* Cards & Containers */
+  .bg-\[\#222c3d\],
+  .bg-\[\#141a24\] {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06) !important;
+  }
+
+  /* Typography inside Content Cards */
+  main h2,
+  main h3,
+  main h4,
+  main h5,
+  main .font-heading {
+    color: #0f172a !important;
+  }
+
+  main p.text-gray-300,
+  main p.text-gray-400,
+  main span.text-gray-300,
+  main span.text-gray-400,
+  main div.text-gray-300,
+  main div.text-gray-400 {
+    color: #475569 !important;
+  }
+
+  main .text-white {
+    color: #0f172a !important;
+  }
+
+  /* Tables */
+  table tbody tr {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  table td.bg-slate-900\/40,
+  table td.bg-gray-900\/40 {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+  }
+
+  table td {
+    color: #334155 !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  /* Inputs & Forms */
+  input,
+  select,
+  textarea {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  /* Footer in Light Mode */
+  footer {
+    background-color: #0f172a !important;
+    color: #cbd5e1 !important;
+    border-color: #1e293b !important;
+  }
+
+  footer h3,
+  footer .text-white,
+  footer .font-heading {
+    color: #ffffff !important;
+  }
+
+  footer p,
+  footer span,
+  footer a {
+    color: #cbd5e1 !important;
+  }
+
+  footer a:hover {
+    color: #ffc000 !important;
+  }
+
+  footer .bg-\[\#0f1520\],
+  footer .bg-\[\#07090e\] {
+    background-color: #0b1120 !important;
+    border-color: #1e293b !important;
+  }
 }
 
-[data-theme="light"] input,
-[data-theme="light"] select,
-[data-theme="light"] textarea,
-[data-theme="hybrid"] input,
-[data-theme="hybrid"] select,
-[data-theme="hybrid"] textarea {
-  background-color: #ffffff !important;
-  color: #0f172a !important;
-  border-color: #cbd5e1 !important;
+/* ==========================================================================
+   THEME 2: HYBRID LUXURY (Dark Navy Header/Footer + Light Body)
+   ========================================================================== */
+[data-theme="hybrid"] {
+  /* Header in Hybrid: Deep Dark Navy */
+  header {
+    background-color: #111827 !important;
+    border-color: #1f2937 !important;
+  }
+
+  header .font-heading,
+  header span.text-white,
+  header a.text-white,
+  header nav a {
+    color: #ffffff !important;
+  }
+
+  header nav a:hover,
+  header nav a.text-gold-400 {
+    color: #ffd014 !important;
+  }
+
+  header .text-gray-200,
+  header .text-gray-300 {
+    color: #cbd5e1 !important;
+  }
+
+  header .bg-\[\#1e2838\],
+  header .bg-\[\#0e131b\] {
+    background-color: #1f2937 !important;
+    border-color: #374151 !important;
+  }
+
+  /* TopBar in Hybrid */
+  .bg-\[\#151c27\],
+  .bg-\[\#111620\] {
+    background-color: #0b0f19 !important;
+    color: #cbd5e1 !important;
+    border-color: #1f2937 !important;
+  }
+
+  .bg-\[\#151c27\] span,
+  .bg-\[\#151c27\] a,
+  .bg-\[\#111620\] span,
+  .bg-\[\#111620\] a {
+    color: #cbd5e1 !important;
+  }
+
+  /* Main Body Content is Bright & Clean White */
+  main,
+  .bg-\[\#1a2230\],
+  .bg-\[\#0f141c\] {
+    background-color: #f8fafc !important;
+    color: #1e293b !important;
+  }
+
+  .bg-\[\#141c28\],
+  .bg-\[\#0c1017\],
+  .bg-\[\#0d1118\] {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  .bg-\[\#222c3d\],
+  .bg-\[\#141a24\] {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08) !important;
+  }
+
+  main h2,
+  main h3,
+  main h4,
+  main h5,
+  main .font-heading {
+    color: #0f172a !important;
+  }
+
+  main p.text-gray-300,
+  main p.text-gray-400,
+  main span.text-gray-300,
+  main span.text-gray-400,
+  main div.text-gray-300,
+  main div.text-gray-400 {
+    color: #475569 !important;
+  }
+
+  main .text-white {
+    color: #0f172a !important;
+  }
+
+  table tbody tr {
+    background-color: #ffffff !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  table td.bg-slate-900\/40,
+  table td.bg-gray-900\/40 {
+    background-color: #f1f5f9 !important;
+    color: #0f172a !important;
+  }
+
+  table td {
+    color: #334155 !important;
+    border-color: #e2e8f0 !important;
+  }
+
+  input,
+  select,
+  textarea {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    border-color: #cbd5e1 !important;
+  }
+
+  /* Footer in Hybrid: Deep Dark Navy */
+  footer {
+    background-color: #0f172a !important;
+    color: #cbd5e1 !important;
+    border-color: #1e293b !important;
+  }
+
+  footer h3,
+  footer .text-white,
+  footer .font-heading {
+    color: #ffffff !important;
+  }
+
+  footer p,
+  footer span,
+  footer a {
+    color: #cbd5e1 !important;
+  }
+
+  footer a:hover {
+    color: #ffc000 !important;
+  }
+
+  footer .bg-\[\#0f1520\],
+  footer .bg-\[\#07090e\] {
+    background-color: #090e17 !important;
+    border-color: #1e293b !important;
+  }
+}
+
+/* ==========================================================================
+   THEME 3: MODERN SLATE THEME (Current Default)
+   ========================================================================== */
+[data-theme="slate"] {
+  .bg-\[\#1a2230\] { background-color: #1a2230 !important; }
+  .bg-\[\#222c3d\] { background-color: #222c3d !important; }
+  .bg-\[\#141c28\] { background-color: #141c28 !important; }
+  .bg-\[\#151c27\] { background-color: #151c27 !important; }
+  .bg-\[\#1e2838\] { background-color: #1e2838 !important; }
+  .bg-\[\#161e2b\] { background-color: #161e2b !important; }
+}
+
+/* ==========================================================================
+   THEME 4: DEEP OBSIDIAN THEME (Previous Theme)
+   ========================================================================== */
+[data-theme="obsidian"] {
+  .bg-\[\#1a2230\],
+  .bg-\[\#0f141c\] { background-color: #0f141c !important; }
+  .bg-\[\#222c3d\],
+  .bg-\[\#141a24\] { background-color: #141a24 !important; }
+  .bg-\[\#141c28\],
+  .bg-\[\#0c1017\] { background-color: #0c1017 !important; }
+  .bg-\[\#151c27\],
+  .bg-\[\#111620\],
+  .bg-\[\#0b0e14\] { background-color: #0b0e14 !important; }
+  .bg-\[\#1e2838\],
+  .bg-\[\#0e131b\] { background-color: #0e131b !important; }
+  .bg-\[\#161e2b\] { background-color: #0c1017 !important; }
 }

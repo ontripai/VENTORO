@@ -50,7 +50,7 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
   return (
     <div className="flex flex-col w-full bg-[#1a2230]">
       {/* Header Banner */}
-      <section className="relative py-20 bg-cover bg-center overflow-hidden" style={{ backgroundImage: `url(${service.image})` }}>
+      <section className="page-header-banner relative py-20 bg-cover bg-center overflow-hidden" style={{ backgroundImage: `url(${service.image})` }}>
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/70 backdrop-blur-xs" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Breadcrumbs items={breadcrumbs} lang={lang} />

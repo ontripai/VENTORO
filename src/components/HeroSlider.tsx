@@ -34,7 +34,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ lang }) => {
 
   return (
     <section
-      className="relative w-full h-[620px] sm:h-[680px] lg:h-[740px] overflow-hidden bg-brand-dark"
+      className="hero-slider relative w-full h-[620px] sm:h-[680px] lg:h-[740px] overflow-hidden bg-brand-dark"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
