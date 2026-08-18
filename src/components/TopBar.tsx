@@ -24,6 +24,7 @@ export const TopBar: React.FC<TopBarProps> = ({ lang }) => {
         <div className="flex items-center space-x-6">
           <a
             href={`tel:${dict.topBar.phone.replace(/\s+/g, '')}`}
+            aria-label={`${dict.topBar.phone} - România`}
             className="flex items-center gap-1.5 hover:text-gold-500 transition-colors"
           >
             <Phone className="w-3.5 h-3.5 text-gold-500" />
@@ -37,6 +38,7 @@ export const TopBar: React.FC<TopBarProps> = ({ lang }) => {
             )}`}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Contactează-ne pe WhatsApp la +40 725 880000"
             className="flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-semibold transition-colors"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -44,6 +46,7 @@ export const TopBar: React.FC<TopBarProps> = ({ lang }) => {
           </a>
           <a
             href={`mailto:${dict.topBar.email}`}
+            aria-label={`Trimite email la ${dict.topBar.email}`}
             className="flex items-center gap-1.5 hover:text-gold-500 transition-colors"
           >
             <Mail className="w-3.5 h-3.5 text-gold-500" />

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { Language } from '@/types';
 import { getDictionary } from '@/lib/i18n';
@@ -37,6 +38,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ lang }) => {
       className="hero-slider relative w-full h-[620px] sm:h-[680px] lg:h-[740px] overflow-hidden bg-brand-dark"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      aria-label={lang === 'ro' ? 'Prezentare principală VENTORO' : 'VENTORO Main Showcase'}
     >
       {/* Slides */}
       {slides.map((slide, index) => {
@@ -49,13 +51,22 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ lang }) => {
               isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
             }`}
           >
-            {/* Background Image with Zoom animation */}
+            {/* Background Image using Next.js Image with priority on first slide for ultra-fast LCP */}
             <div
-              className={`absolute inset-0 bg-cover bg-center transition-transform duration-10000 ease-linear ${
+              className={`absolute inset-0 transition-transform duration-10000 ease-linear ${
                 isActive ? 'scale-105' : 'scale-100'
               }`}
-              style={{ backgroundImage: `url(${slide.image})` }}
-            />
+            >
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                fill
+                priority={index === 0}
+                fetchPriority={index === 0 ? 'high' : 'auto'}
+                sizes="100vw"
+                className="object-cover object-center"
+              />
+            </div>
 
             {/* Dark & Gold Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
@@ -106,7 +117,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ lang }) => {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 hover:bg-gold-500 text-white hover:text-black border border-white/20 hover:border-gold-500 flex items-center justify-center transition-all duration-200 backdrop-blur-sm shadow-md"
+        className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 hover:bg-gold-500 text-white hover:text-black border border-white/20 hover:border-gold-500 flex items-center justify-center transition-all duration-200 backdrop-blur-sm shadow-md min-w-[48px] min-h-[48px]"
         aria-label="Previous Slide"
       >
         <ChevronLeft className="w-6 h-6" />
@@ -114,27 +125,32 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ lang }) => {
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 hover:bg-gold-500 text-white hover:text-black border border-white/20 hover:border-gold-500 flex items-center justify-center transition-all duration-200 backdrop-blur-sm shadow-md"
+        className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/40 hover:bg-gold-500 text-white hover:text-black border border-white/20 hover:border-gold-500 flex items-center justify-center transition-all duration-200 backdrop-blur-sm shadow-md min-w-[48px] min-h-[48px]"
         aria-label="Next Slide"
       >
         <ChevronRight className="w-6 h-6" />
       </button>
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center space-x-3">
+      {/* Slide Indicators with accessible touch targets */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center space-x-1 sm:space-x-2">
         {slides.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrent(idx)}
-            className={`h-2.5 rounded-full transition-all duration-300 ${
-              idx === current
-                ? 'w-10 bg-gold-500 shadow-md shadow-gold-500/50'
-                : 'w-2.5 bg-white/40 hover:bg-white/70'
-            }`}
+            className="min-w-[44px] min-h-[44px] flex items-center justify-center p-2 focus:outline-none"
             aria-label={`Go to slide ${idx + 1}`}
-          />
+          >
+            <span
+              className={`h-2.5 rounded-full transition-all duration-300 block ${
+                idx === current
+                  ? 'w-10 bg-gold-500 shadow-md shadow-gold-500/50'
+                  : 'w-2.5 bg-white/40 hover:bg-white/70'
+              }`}
+            />
+          </button>
         ))}
       </div>
     </section>
   );
 };
+

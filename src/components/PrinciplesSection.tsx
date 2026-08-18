@@ -32,7 +32,7 @@ export const PrinciplesSection: React.FC<PrinciplesSectionProps> = ({ lang }) =>
               className="bg-[#222c3d] p-6 rounded-xl border border-slate-700/80 hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:-translate-y-1"
             >
               <div>
-                <span className="font-heading text-4xl font-black text-gold-500/30 group-hover:text-gold-500 transition-colors block mb-4">
+                <span className="font-heading text-4xl font-black text-gold-400/70 group-hover:text-gold-400 transition-colors block mb-4">
                   {item.number}
                 </span>
                 <h3 className="text-base font-bold text-white group-hover:text-gold-400 transition-colors mb-3">

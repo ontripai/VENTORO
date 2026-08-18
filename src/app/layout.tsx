@@ -1,5 +1,20 @@
 import type { Metadata, Viewport } from "next";
+import { Montserrat, Roboto_Slab } from "next/font/google";
 import "./globals.css";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
+
+const robotoSlab = Roboto_Slab({
+  subsets: ["latin"],
+  variable: "--font-roboto-slab",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
 
 export const viewport: Viewport = {
   themeColor: "#ffc000",
@@ -103,21 +118,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ro" className="scroll-smooth" suppressHydrationWarning>
+    <html
+      lang="ro"
+      className={`${montserrat.variable} ${robotoSlab.variable} scroll-smooth`}
+      suppressHydrationWarning
+    >
       <head>
         <link rel="icon" href="/images/logo.jpeg" type="image/jpeg" />
         <link rel="shortcut icon" href="/images/logo.jpeg" type="image/jpeg" />
         <link rel="apple-touch-icon" href="/images/logo.jpeg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto+Slab:wght@400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
       </head>
-      <body className="antialiased bg-[#1a2230] text-gray-100 min-h-screen flex flex-col selection:bg-gold-500 selection:text-black">
+      <body className="font-sans antialiased bg-[#1a2230] text-gray-100 min-h-screen flex flex-col selection:bg-gold-500 selection:text-black">
         {children}
       </body>
     </html>
   );
 }
+

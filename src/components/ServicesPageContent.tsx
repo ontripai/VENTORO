@@ -154,7 +154,7 @@ export const ServicesPageContent: React.FC<ServicesPageContentProps> = ({ lang }
                 key={idx}
                 className="p-6 rounded-2xl bg-[#222c3d] border border-slate-700/80 space-y-4 hover:border-gold-500/50 transition-all shadow-lg relative group"
               >
-                <span className="font-heading font-black text-3xl text-gold-500/30 group-hover:text-gold-500/70 transition-colors">
+                <span className="font-heading font-black text-3xl text-gold-400/70 group-hover:text-gold-400 transition-colors">
                   {step.step}
                 </span>
                 <h3 className="font-heading font-bold text-base text-white">

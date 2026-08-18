@@ -104,6 +104,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, lang }) => {
             href={targetUrl}
             target={isExternal ? '_blank' : undefined}
             rel={isExternal ? 'noopener noreferrer' : undefined}
+            aria-label={`${btnLabel}: ${title}`}
             className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold-400 hover:text-gold-300 group/btn"
           >
             <span>{btnLabel}</span>

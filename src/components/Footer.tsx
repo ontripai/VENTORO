@@ -49,15 +49,15 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
 
             <div className="p-3.5 rounded-lg bg-gray-900/60 border border-gray-800 space-y-1.5 text-[11px] text-gray-300">
               <div className="flex justify-between">
-                <span className="text-gray-500">{dict.footer.cuiLabel}:</span>
+                <span className="text-gray-400">{dict.footer.cuiLabel}:</span>
                 <span className="font-semibold text-white">{dict.company.cui}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-500">{dict.footer.regComLabel}:</span>
+                <span className="text-gray-400">{dict.footer.regComLabel}:</span>
                 <span className="font-semibold text-white">{dict.company.regCom}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-500">{dict.footer.euidLabel}:</span>
+                <span className="text-gray-400">{dict.footer.euidLabel}:</span>
                 <span className="font-semibold text-white">{dict.company.euid}</span>
               </div>
             </div>
@@ -91,6 +91,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
                     TELEFON :{' '}
                     <a
                       href={`tel:${dict.company.phoneRo.replace(/\s+/g, '')}`}
+                      aria-label={`${dict.company.phoneRo} - România`}
                       className="text-white hover:text-gold-400"
                     >
                       {dict.company.phoneRo}
@@ -105,6 +106,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
                       href="https://wa.me/40725880000"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="Contactează VENTORO pe WhatsApp la numărul +40 725 880000"
                       className="text-emerald-400 hover:text-emerald-300 underline"
                     >
                       +40 725 880000
@@ -130,6 +132,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
                     TELEFON :{' '}
                     <a
                       href={`tel:${dict.company.phoneAt.replace(/\s+/g, '')}`}
+                      aria-label={`${dict.company.phoneAt} - Austria`}
                       className="text-white hover:text-gold-400"
                     >
                       {dict.company.phoneAt}
@@ -172,7 +175,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
       {/* Bottom Sub-Footer Bar */}
       <div className="bg-[#0f1520] py-6 border-t border-slate-700/80 text-[11px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-center sm:text-left">
+          <p className="text-gray-400 text-center sm:text-left">
             {currentYear} © <span className="text-white font-semibold">VENTORO S.R.L.</span> – {dict.footer.rights}
           </p>
           <div className="flex items-center space-x-5 text-gray-400">
