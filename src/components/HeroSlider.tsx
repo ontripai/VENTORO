@@ -35,7 +35,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ lang }) => {
 
   return (
     <section
-      className="hero-slider relative w-full h-[620px] sm:h-[680px] lg:h-[740px] overflow-hidden bg-brand-dark"
+      className="hero-slider relative w-full h-[620px] sm:h-[680px] lg:h-[740px] overflow-hidden bg-[#161e2b]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       aria-label={lang === 'ro' ? 'Prezentare principală VENTORO' : 'VENTORO Main Showcase'}
@@ -47,24 +47,20 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ lang }) => {
         return (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
               isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
             }`}
           >
-            {/* Background Image using Next.js Image with priority on first slide for ultra-fast LCP */}
-            <div
-              className={`absolute inset-0 transition-transform duration-10000 ease-linear ${
-                isActive ? 'scale-105' : 'scale-100'
-              }`}
-            >
+            {/* Slide Image */}
+            <div className="absolute inset-0">
               <Image
                 src={slide.image}
                 alt={slide.title}
                 fill
                 priority={index === 0}
-                loading={index === 0 ? 'eager' : 'lazy'}
                 fetchPriority={index === 0 ? 'high' : 'low'}
                 sizes="100vw"
+                quality={80}
                 className="object-cover object-center"
               />
             </div>
@@ -77,8 +73,8 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ lang }) => {
             <div className="relative z-20 max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
               <div className="max-w-3xl">
                 {/* Gold Pill Badge */}
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/15 border border-gold-500/40 text-gold-400 text-xs font-bold tracking-widest uppercase mb-5 animate-fade-in shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-gold-500 animate-ping" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/15 border border-gold-500/40 text-gold-400 text-xs font-bold tracking-widest uppercase mb-5 shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-gold-500" />
                   <span>{slide.badge}</span>
                 </div>
 
@@ -154,4 +150,5 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ lang }) => {
     </section>
   );
 };
+
 
