@@ -105,6 +105,9 @@ export default function RootLayout({
   return (
     <html lang="ro" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/images/logo.jpeg" type="image/jpeg" />
+        <link rel="shortcut icon" href="/images/logo.jpeg" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="/images/logo.jpeg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
