@@ -1,5 +1,17 @@
 export type Language = 'ro' | 'en';
 
+export interface ServiceFAQ {
+  qRo: string;
+  qEn: string;
+  aRo: string;
+  aEn: string;
+}
+
+export interface WorkflowStep {
+  title: string;
+  desc: string;
+}
+
 export interface ServiceClusterItem {
   id: string;
   slugRo: string;
@@ -18,6 +30,11 @@ export interface ServiceClusterItem {
   specsEn: { label: string; value: string }[];
   clusterSubtopicsRo: string[];
   clusterSubtopicsEn: string[];
+  applicationsRo?: string[];
+  applicationsEn?: string[];
+  workflowStepsRo?: WorkflowStep[];
+  workflowStepsEn?: WorkflowStep[];
+  faqs?: ServiceFAQ[];
   externalUrl?: string;
   gallery?: string[];
 }
@@ -36,11 +53,18 @@ export interface ProjectItem {
   categoryEn: string;
   descriptionRo: string;
   descriptionEn: string;
+  challengeRo?: string;
+  challengeEn?: string;
+  solutionRo?: string;
+  solutionEn?: string;
+  resultsRo?: string[];
+  resultsEn?: string[];
   year: string;
   locationRo: string;
   locationEn: string;
   stats: string;
   image: string;
+  tags?: string[];
 }
 
 export interface CompanyInfo {

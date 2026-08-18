@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -11,7 +11,11 @@ import {
   ArrowRight,
   Sparkles,
   Layers,
-  FileText,
+  HelpCircle,
+  ChevronDown,
+  Workflow,
+  Factory,
+  Award,
 } from 'lucide-react';
 import { ServiceClusterItem, Language } from '@/types';
 import { getDictionary } from '@/lib/i18n';
@@ -36,6 +40,11 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
   const features = lang === 'ro' ? service.featuresRo : service.featuresEn;
   const specs = lang === 'ro' ? service.specsRo : service.specsEn;
   const subtopics = lang === 'ro' ? service.clusterSubtopicsRo : service.clusterSubtopicsEn;
+  const applications = lang === 'ro' ? service.applicationsRo : service.applicationsEn;
+  const workflowSteps = lang === 'ro' ? service.workflowStepsRo : service.workflowStepsEn;
+  const faqs = service.faqs;
+
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const breadcrumbs = [
     {
@@ -46,6 +55,36 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
       name: title,
     },
   ];
+
+  // Default workflow steps if not specified in service item
+  const defaultSteps = [
+    {
+      title: lang === 'ro' ? '1. Audit & Analiză Tehnică' : '1. Technical Audit & Needs Analysis',
+      desc: lang === 'ro'
+        ? 'Evaluarea cerințelor operaționale, specificațiilor tehnice și standardelor de conformitate cerute de client.'
+        : 'Assessment of operational parameters, engineering requirements, and specific compliance guidelines.',
+    },
+    {
+      title: lang === 'ro' ? '2. Proiectare & Aprovizionare' : '2. Engineering Design & Sourcing',
+      desc: lang === 'ro'
+        ? 'Selectarea echipamentelor certificate de la producători europeni de top și optimizarea lanțului logistic.'
+        : 'Selection of certified machinery from premier European manufacturers with optimized supply logistics.',
+    },
+    {
+      title: lang === 'ro' ? '3. Verificare & Controlul Calității' : '3. Quality Inspection & FAT/SAT',
+      desc: lang === 'ro'
+        ? 'Inspecție riguroasă înainte de livrare, verificarea documentelor de conformitate CE și testarea performanțelor.'
+        : 'Rigorous factory acceptance testing (FAT), CE compliance verification, and performance benchmark audits.',
+    },
+    {
+      title: lang === 'ro' ? '4. Livrare, Integrare & Suport' : '4. Commissioning & Lifecycle Support',
+      desc: lang === 'ro'
+        ? 'Livrare securizată, asistență tehnică la instalare, instruirea personalului și mentenanță continuă.'
+        : 'Secure on-site delivery, integration oversight, staff training, and proactive warranty maintenance.',
+    },
+  ];
+
+  const stepsToRender = workflowSteps && workflowSteps.length > 0 ? workflowSteps : defaultSteps;
 
   return (
     <div className="flex flex-col w-full bg-[#1a2230]">
@@ -73,12 +112,12 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Left Content Area (8 Cols) */}
-            <div className="lg:col-span-8 space-y-10">
+            <div className="lg:col-span-8 space-y-12">
               {/* Feature Hero Image */}
-              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-gray-800 shadow-2xl">
+              <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-slate-700 shadow-2xl">
                 <Image
                   src={service.image}
-                  alt={title}
+                  alt={`${title} - Soluții industriale VENTORO`}
                   fill
                   className="object-cover"
                   priority
@@ -112,13 +151,60 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
                 </div>
               </div>
 
+              {/* Core Industrial Applications */}
+              <div className="space-y-4">
+                <h3 className="font-heading text-lg font-bold text-white flex items-center gap-2">
+                  <Factory className="w-5 h-5 text-gold-500" />
+                  <span>{lang === 'ro' ? 'Aplicații Industriale & Domenii de Utilizare' : 'Core Industrial Applications & Use-Cases'}</span>
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {(applications && applications.length > 0
+                    ? applications
+                    : [
+                        lang === 'ro' ? 'Infrastructură energetică și rețele de distribuție' : 'Energy infrastructure and distribution grids',
+                        lang === 'ro' ? 'Combinate industriale și unități de producție continuă' : 'Industrial plants and continuous manufacturing units',
+                        lang === 'ro' ? 'Proiecte civile, comerciale și de infrastructură publică' : 'Civil, commercial, and public infrastructure ventures',
+                        lang === 'ro' ? 'Lanțuri internaționale de transport și operațiuni logistice' : 'International transport chains and multimodal logistics',
+                      ]
+                  ).map((app, idx) => (
+                    <div
+                      key={idx}
+                      className="p-4 rounded-xl bg-[#222c3d] border border-slate-700/80 flex items-start gap-3 hover:border-gold-500/40 transition-colors"
+                    >
+                      <span className="w-6 h-6 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold text-xs shrink-0 border border-gold-500/30">
+                        {idx + 1}
+                      </span>
+                      <p className="text-xs sm:text-sm text-gray-300">{app}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Implementation Roadmap / Workflow */}
+              <div className="bg-[#141c28] p-8 rounded-2xl border border-slate-700/80 space-y-6 shadow-md">
+                <div className="flex items-center gap-2">
+                  <Workflow className="w-5 h-5 text-gold-500" />
+                  <h3 className="font-heading text-lg font-bold text-white">
+                    {lang === 'ro' ? 'Fluxul de Execuție & Livrare în 4 Etape' : '4-Step Engineering & Delivery Roadmap'}
+                  </h3>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {stepsToRender.map((step, idx) => (
+                    <div key={idx} className="p-4 rounded-xl bg-[#222c3d] border border-slate-700 space-y-2">
+                      <p className="text-xs font-bold text-gold-400 uppercase tracking-wider">{step.title}</p>
+                      <p className="text-xs text-gray-300 leading-relaxed">{step.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Technical Specifications */}
               {specs && specs.length > 0 && (
                 <div className="space-y-4">
                   <h3 className="font-heading text-lg font-bold text-white">
                     {lang === 'ro' ? 'Specificații Tehnice și Standarde' : 'Technical Specifications & Standards'}
                   </h3>
-                  <div className="overflow-x-auto rounded-xl border border-slate-700/80">
+                  <div className="overflow-x-auto rounded-xl border border-slate-700/80 shadow-md">
                     <table className="w-full text-left text-xs sm:text-sm">
                       <tbody className="divide-y divide-slate-700 bg-[#222c3d]">
                         {specs.map((spec, idx) => (
@@ -136,7 +222,8 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
                   </div>
                 </div>
               )}
-              {/* Product & Equipment Showcase Gallery (matching perdac.ro subpage images) */}
+
+              {/* Product & Equipment Showcase Gallery */}
               {service.gallery && service.gallery.length > 0 && (
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
@@ -156,7 +243,7 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
                       >
                         <Image
                           src={imgUrl}
-                          alt={`${title} - Gallery item ${idx + 1}`}
+                          alt={`${title} - Echipament industrial ${idx + 1}`}
                           fill
                           className="object-cover transition-transform duration-500 group-hover:scale-110"
                           sizes="(max-width: 768px) 50vw, 25vw"
@@ -168,7 +255,68 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
                 </div>
               )}
 
-              {/* Topic Cluster Subtopics (SEO Authority Linking) */}
+              {/* Service FAQs Accordion */}
+              <div className="space-y-4">
+                <h3 className="font-heading text-lg font-bold text-white flex items-center gap-2">
+                  <HelpCircle className="w-5 h-5 text-gold-500" />
+                  <span>{lang === 'ro' ? 'Întrebări Frecvente Specifice' : 'Frequently Asked Questions'}</span>
+                </h3>
+                <div className="space-y-3">
+                  {(faqs && faqs.length > 0
+                    ? faqs
+                    : [
+                        {
+                          qRo: `Ce standarde de conformitate respectă produsele și serviciile din categoria ${title}?`,
+                          qEn: `What compliance and quality certifications apply to ${title}?`,
+                          aRo: `Toate echipamentele și serviciile livrate de VENTORO respectă normativele europene în vigoare (standarde CE, ISO 9001, ISO 14001, ISO 27001 pentru IT) și sunt însoțite de declarații de conformitate și certificate de garanție emise de producători recunoscuți.`,
+                          aEn: `All machinery, consulting, and equipment supplied by VENTORO comply with strict European directives (CE, ISO 9001, ISO 14001, and ISO 27001 for IT), backed by official manufacturer certificates of origin and warranty agreements.`,
+                        },
+                        {
+                          qRo: `Care este termenul mediu de livrare sau implementare pentru acest tip de proiect?`,
+                          qEn: `What is the standard turnaround and delivery time for this category?`,
+                          aRo: `Termenul variază în funcție de complexitate: componentele din stoc se livrează în 48-72 de ore, în timp ce proiectele de inginerie sau echipamentele fabricate la comandă beneficiază de un grafic de execuție stabilit contractual prin birourile noastre din România și Austria.`,
+                          aEn: `Lead times vary based on project scale: standard components deliver within 48-72 hours, while custom industrial assemblies or IT architecture implementations follow strict milestone-driven schedules managed by our Bucharest and Vienna hubs.`,
+                        },
+                        {
+                          qRo: `Oferiți suport tehnic și mentenanță post-livrare?`,
+                          qEn: `Do you provide post-installation technical support and maintenance?`,
+                          aRo: `Da, VENTORO asigură asistență tehnică continuă, piese de schimb originale și acorduri de nivel al serviciilor (SLA) adaptate cerințelor specifice ale fiecărui partener comercial.`,
+                          aEn: `Yes, VENTORO provides continuous technical advisory, genuine replacement parts supply, and customized Service Level Agreements (SLA) tailored to industrial uptime requirements.`,
+                        },
+                      ]
+                  ).map((faq, idx) => {
+                    const isOpen = openFaq === idx;
+                    const question = lang === 'ro' ? faq.qRo : faq.qEn;
+                    const answer = lang === 'ro' ? faq.aRo : faq.aEn;
+
+                    return (
+                      <div
+                        key={idx}
+                        className="rounded-xl bg-[#222c3d] border border-slate-700/80 overflow-hidden transition-all shadow-sm"
+                      >
+                        <button
+                          onClick={() => setOpenFaq(isOpen ? null : idx)}
+                          className="w-full p-4 text-left flex items-center justify-between text-xs sm:text-sm font-bold text-white hover:text-gold-400 transition-colors"
+                        >
+                          <span className="pr-4">{question}</span>
+                          <ChevronDown
+                            className={`w-4 h-4 text-gold-500 shrink-0 transition-transform duration-200 ${
+                              isOpen ? 'rotate-180' : ''
+                            }`}
+                          />
+                        </button>
+                        {isOpen && (
+                          <div className="p-4 pt-0 text-xs sm:text-sm text-gray-300 leading-relaxed border-t border-slate-700/60">
+                            {answer}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Topic Cluster Subtopics (SEO Linking) */}
               <div className="p-6 rounded-2xl bg-[#141c28] border border-slate-700/80 space-y-3 shadow-md">
                 <h4 className="text-xs uppercase font-bold tracking-wider text-gold-400">
                   {lang === 'ro' ? 'Subiecte Specializate în Acest Domeniu' : 'Specialized Topics in this Cluster'}
