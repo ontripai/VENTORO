@@ -11,14 +11,12 @@
     --bg-card: #222c3d;
     --bg-card-subtle: #18202d;
     --bg-header: #1a2230;
-    --bg-header-scrolled: rgba(22, 30, 43, 0.95);
     --bg-topbar: #151c27;
     --bg-footer: #141c28;
     --bg-subfooter: #0f1520;
     --bg-dropdown: #1e2838;
     --border-main: #334155;
     --border-card: #3b485d;
-    --border-subtle: #2d3748;
     --text-heading: #ffffff;
     --text-primary: #f1f5f9;
     --text-secondary: #cbd5e1;
@@ -29,7 +27,6 @@
     --badge-text: #ffd014;
     --badge-border: rgba(255, 192, 0, 0.3);
     --gold-accent: #ffc000;
-    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
   }
 
   /* Theme 1: Clean European White */
@@ -39,14 +36,12 @@
     --bg-card: #ffffff;
     --bg-card-subtle: #f1f5f9;
     --bg-header: #ffffff;
-    --bg-header-scrolled: rgba(255, 255, 255, 0.96);
     --bg-topbar: #f1f5f9;
     --bg-footer: #0f172a;
     --bg-subfooter: #0b1120;
     --bg-dropdown: #ffffff;
     --border-main: #e2e8f0;
     --border-card: #e2e8f0;
-    --border-subtle: #cbd5e1;
     --text-heading: #0f172a;
     --text-primary: #1e293b;
     --text-secondary: #475569;
@@ -57,7 +52,6 @@
     --badge-text: #b8860b;
     --badge-border: rgba(212, 175, 55, 0.4);
     --gold-accent: #c59b27;
-    --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
   }
 
   /* Theme 2: Hybrid Luxury (Dark Header & Footer + Light Body) */
@@ -67,14 +61,12 @@
     --bg-card: #ffffff;
     --bg-card-subtle: #f1f5f9;
     --bg-header: #111827;
-    --bg-header-scrolled: rgba(17, 24, 39, 0.96);
     --bg-topbar: #0b0f19;
     --bg-footer: #0f172a;
     --bg-subfooter: #090e17;
     --bg-dropdown: #1f2937;
     --border-main: #e2e8f0;
     --border-card: #e2e8f0;
-    --border-subtle: #cbd5e1;
     --text-heading: #0f172a;
     --text-primary: #1e293b;
     --text-secondary: #475569;
@@ -85,7 +77,6 @@
     --badge-text: #b8860b;
     --badge-border: rgba(212, 175, 55, 0.4);
     --gold-accent: #c59b27;
-    --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1);
   }
 
   /* Theme 4: Deep Obsidian Black & Gold (Previous Theme) */
@@ -95,14 +86,12 @@
     --bg-card: #141a24;
     --bg-card-subtle: #0a0d13;
     --bg-header: #0f141c;
-    --bg-header-scrolled: rgba(11, 14, 20, 0.96);
     --bg-topbar: #0b0e14;
     --bg-footer: #0b0e14;
     --bg-subfooter: #07090e;
     --bg-dropdown: #0e131b;
     --border-main: #1f2937;
     --border-card: #2a3447;
-    --border-subtle: #1e293b;
     --text-heading: #ffffff;
     --text-primary: #f3f4f6;
     --text-secondary: #9ca3af;
@@ -113,7 +102,6 @@
     --badge-text: #ffd014;
     --badge-border: rgba(255, 192, 0, 0.3);
     --gold-accent: #ffc000;
-    --card-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.5);
   }
 
   body {
@@ -121,7 +109,7 @@
     color: var(--text-primary);
     font-family: 'Montserrat', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -149,52 +137,85 @@
 }
 
 /* ==========================================================================
-   HERO SLIDER, PAGE BANNERS & CTA BANNERS MUST ALWAYS HAVE CRISP WHITE TEXT
+   1. DARK OVERLAYS: HERO SLIDER, CTA BANNER & HEADER BANNERS ALWAYS HAVE WHITE TEXT
    ========================================================================== */
-.hero-slider,
 .hero-slider h1,
 .hero-slider h2,
 .hero-slider h3,
-.hero-slider p,
-.hero-slider span,
 .hero-slider .font-heading,
-.hero-slider .text-white,
-.page-header-banner,
 .page-header-banner h1,
 .page-header-banner h2,
 .page-header-banner h3,
-.page-header-banner p,
-.page-header-banner span,
 .page-header-banner .font-heading,
-.page-header-banner .text-white,
-.cta-banner,
 .cta-banner h1,
 .cta-banner h2,
 .cta-banner h3,
-.cta-banner p,
-.cta-banner span,
-.cta-banner .font-heading,
-.cta-banner .text-white {
+.cta-banner h4,
+.cta-banner .font-heading {
   color: #ffffff !important;
 }
 
 .hero-slider p,
 .page-header-banner p,
 .cta-banner p {
-  color: #e2e8f0 !important;
+  color: #f1f5f9 !important;
 }
 
-.hero-slider .text-gold-400,
-.page-header-banner .text-gold-400,
-.cta-banner .text-gold-400 {
+.hero-slider span.text-gold-400,
+.hero-slider span.text-gold-500,
+.page-header-banner span.text-gold-400,
+.page-header-banner span.text-gold-500,
+.cta-banner span.text-gold-400,
+.cta-banner span.text-gold-500 {
   color: #ffd014 !important;
 }
 
 /* ==========================================================================
-   THEME 1: PURE LIGHT THEME (Clean European White Corporate)
+   2. FOOTER: ALWAYS EXECUTIVE DARK NAVY WITH CRISP WHITE & GOLD TEXT
+   ========================================================================== */
+footer {
+  background-color: #0f172a !important;
+  color: #cbd5e1 !important;
+  border-top: 1px solid #1e293b !important;
+}
+
+footer h3,
+footer .font-heading,
+footer strong,
+footer span.text-white,
+footer a.text-white {
+  color: #ffffff !important;
+}
+
+footer p,
+footer span,
+footer li,
+footer a {
+  color: #cbd5e1 !important;
+}
+
+footer a:hover {
+  color: #ffd014 !important;
+}
+
+footer .bg-gray-900\/60,
+footer .bg-slate-900\/60,
+footer .bg-black {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+}
+
+footer .bg-\[\#0f1520\],
+footer .bg-\[\#07090e\] {
+  background-color: #090e17 !important;
+  border-color: #1e293b !important;
+}
+
+/* ==========================================================================
+   3. THEME 1: PURE LIGHT THEME (White Background, Clean Cards, Dark Typography)
    ========================================================================== */
 [data-theme="light"] {
-  /* Header & Navigation in Light Mode */
+  /* Header in Light Mode */
   header {
     background-color: #ffffff !important;
     border-color: #e2e8f0 !important;
@@ -213,7 +234,8 @@
   }
 
   header .text-gray-200,
-  header .text-gray-300 {
+  header .text-gray-300,
+  header .text-gray-400 {
     color: #334155 !important;
   }
 
@@ -226,11 +248,12 @@
   header .bg-\[\#0e131b\] {
     background-color: #ffffff !important;
     border-color: #e2e8f0 !important;
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.12) !important;
   }
 
-  header .bg-\[\#1e2838\] span.text-white,
-  header .bg-\[\#1e2838\] p {
+  header .bg-\[\#1e2838\] span,
+  header .bg-\[\#1e2838\] p,
+  header .bg-\[\#1e2838\] a {
     color: #0f172a !important;
   }
 
@@ -238,7 +261,6 @@
   .bg-\[\#151c27\],
   .bg-\[\#111620\] {
     background-color: #f1f5f9 !important;
-    color: #334155 !important;
     border-color: #e2e8f0 !important;
   }
 
@@ -249,20 +271,13 @@
     color: #334155 !important;
   }
 
-  .bg-\[\#151c27\] a:hover,
-  .bg-\[\#111620\] a:hover {
-    color: #c59b27 !important;
-  }
-
-  /* Main Body Content & Sections */
+  /* Main Body & Light Sections */
   main,
   .bg-\[\#1a2230\],
   .bg-\[\#0f141c\] {
     background-color: #f8fafc !important;
-    color: #1e293b !important;
   }
 
-  /* Alternating Sections */
   .bg-\[\#141c28\],
   .bg-\[\#0c1017\],
   .bg-\[\#0d1118\] {
@@ -270,7 +285,7 @@
     border-color: #e2e8f0 !important;
   }
 
-  /* Cards & Containers */
+  /* Cards in Light Mode */
   .bg-\[\#222c3d\],
   .bg-\[\#141a24\] {
     background-color: #ffffff !important;
@@ -278,29 +293,25 @@
     box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06) !important;
   }
 
-  /* Typography inside Content Cards */
-  main h2,
-  main h3,
-  main h4,
-  main h5,
-  main .font-heading {
+  /* Dark Typography inside Content Sections (excluding hero and banners) */
+  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h2,
+  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h3,
+  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h4,
+  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h5,
+  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) .font-heading {
     color: #0f172a !important;
   }
 
-  main p.text-gray-300,
-  main p.text-gray-400,
-  main span.text-gray-300,
-  main span.text-gray-400,
-  main div.text-gray-300,
-  main div.text-gray-400 {
-    color: #475569 !important;
+  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) p,
+  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) span:not(.text-gold-400):not(.text-gold-500):not(.bg-gold-500) {
+    color: #334155 !important;
   }
 
-  main .text-white {
+  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) .text-white {
     color: #0f172a !important;
   }
 
-  /* Tables */
+  /* Tables in Light Mode */
   table tbody tr {
     background-color: #ffffff !important;
     border-color: #e2e8f0 !important;
@@ -317,7 +328,7 @@
     border-color: #e2e8f0 !important;
   }
 
-  /* Inputs & Forms */
+  /* Forms in Light Mode */
   input,
   select,
   textarea {
@@ -325,42 +336,13 @@
     color: #0f172a !important;
     border-color: #cbd5e1 !important;
   }
-
-  /* Footer in Light Mode */
-  footer {
-    background-color: #0f172a !important;
-    color: #cbd5e1 !important;
-    border-color: #1e293b !important;
-  }
-
-  footer h3,
-  footer .text-white,
-  footer .font-heading {
-    color: #ffffff !important;
-  }
-
-  footer p,
-  footer span,
-  footer a {
-    color: #cbd5e1 !important;
-  }
-
-  footer a:hover {
-    color: #ffc000 !important;
-  }
-
-  footer .bg-\[\#0f1520\],
-  footer .bg-\[\#07090e\] {
-    background-color: #0b1120 !important;
-    border-color: #1e293b !important;
-  }
 }
 
 /* ==========================================================================
-   THEME 2: HYBRID LUXURY (Dark Navy Header/Footer + Light Body)
+   4. THEME 2: HYBRID LUXURY (Dark Navy Header + Clean White Body)
    ========================================================================== */
 [data-theme="hybrid"] {
-  /* Header in Hybrid: Deep Dark Navy */
+  /* Header in Hybrid: Deep Dark Navy with White & Gold Text */
   header {
     background-color: #111827 !important;
     border-color: #1f2937 !important;
@@ -389,11 +371,10 @@
     border-color: #374151 !important;
   }
 
-  /* TopBar in Hybrid */
+  /* TopBar in Hybrid: Dark */
   .bg-\[\#151c27\],
   .bg-\[\#111620\] {
     background-color: #0b0f19 !important;
-    color: #cbd5e1 !important;
     border-color: #1f2937 !important;
   }
 
@@ -404,12 +385,11 @@
     color: #cbd5e1 !important;
   }
 
-  /* Main Body Content is Bright & Clean White */
+  /* Main Body is Crisp White */
   main,
   .bg-\[\#1a2230\],
   .bg-\[\#0f141c\] {
     background-color: #f8fafc !important;
-    color: #1e293b !important;
   }
 
   .bg-\[\#141c28\],
@@ -419,6 +399,7 @@
     border-color: #e2e8f0 !important;
   }
 
+  /* Cards in Hybrid Mode */
   .bg-\[\#222c3d\],
   .bg-\[\#141a24\] {
     background-color: #ffffff !important;
@@ -426,27 +407,25 @@
     box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08) !important;
   }
 
-  main h2,
-  main h3,
-  main h4,
-  main h5,
-  main .font-heading {
+  /* Typography inside Content Sections */
+  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h2,
+  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h3,
+  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h4,
+  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h5,
+  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) .font-heading {
     color: #0f172a !important;
   }
 
-  main p.text-gray-300,
-  main p.text-gray-400,
-  main span.text-gray-300,
-  main span.text-gray-400,
-  main div.text-gray-300,
-  main div.text-gray-400 {
-    color: #475569 !important;
+  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) p,
+  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) span:not(.text-gold-400):not(.text-gold-500):not(.bg-gold-500) {
+    color: #334155 !important;
   }
 
-  main .text-white {
+  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) .text-white {
     color: #0f172a !important;
   }
 
+  /* Tables in Hybrid Mode */
   table tbody tr {
     background-color: #ffffff !important;
     border-color: #e2e8f0 !important;
@@ -463,6 +442,7 @@
     border-color: #e2e8f0 !important;
   }
 
+  /* Forms in Hybrid Mode */
   input,
   select,
   textarea {
@@ -470,39 +450,10 @@
     color: #0f172a !important;
     border-color: #cbd5e1 !important;
   }
-
-  /* Footer in Hybrid: Deep Dark Navy */
-  footer {
-    background-color: #0f172a !important;
-    color: #cbd5e1 !important;
-    border-color: #1e293b !important;
-  }
-
-  footer h3,
-  footer .text-white,
-  footer .font-heading {
-    color: #ffffff !important;
-  }
-
-  footer p,
-  footer span,
-  footer a {
-    color: #cbd5e1 !important;
-  }
-
-  footer a:hover {
-    color: #ffc000 !important;
-  }
-
-  footer .bg-\[\#0f1520\],
-  footer .bg-\[\#07090e\] {
-    background-color: #090e17 !important;
-    border-color: #1e293b !important;
-  }
 }
 
 /* ==========================================================================
-   THEME 3: MODERN SLATE THEME (Current Default)
+   5. THEME 3: MODERN SLATE THEME (Current Default)
    ========================================================================== */
 [data-theme="slate"] {
   .bg-\[\#1a2230\] { background-color: #1a2230 !important; }
@@ -514,7 +465,7 @@
 }
 
 /* ==========================================================================
-   THEME 4: DEEP OBSIDIAN THEME (Previous Theme)
+   6. THEME 4: DEEP OBSIDIAN THEME (Previous Theme)
    ========================================================================== */
 [data-theme="obsidian"] {
   .bg-\[\#1a2230\],
