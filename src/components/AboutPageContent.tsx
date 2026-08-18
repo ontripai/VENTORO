@@ -36,7 +36,7 @@ export const AboutPageContent: React.FC<AboutPageContentProps> = ({ lang }) => {
   ];
 
   return (
-    <div className="flex flex-col w-full bg-[#0f141c]">
+    <div className="flex flex-col w-full bg-[#1a2230]">
       {/* Page Header Banner */}
       <section className="relative py-20 bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('/images/about-presentation.jpg')" }}>
         <div className="absolute inset-0 bg-black/85 backdrop-blur-xs" />
@@ -80,7 +80,7 @@ export const AboutPageContent: React.FC<AboutPageContentProps> = ({ lang }) => {
                 {dict.aboutPreview.p1}
               </p>
 
-              <div className="p-5 rounded-xl bg-[#141a24] border border-gold-500/20 space-y-3">
+              <div className="p-5 rounded-xl bg-[#222c3d] border border-gold-500/30 space-y-3 shadow-md">
                 <div className="flex items-center gap-2.5 text-gold-400 font-bold text-sm">
                   <Sparkles className="w-5 h-5" />
                   <span>{lang === 'ro' ? 'Misiunea Noastră Strategică' : 'Our Strategic Mission'}</span>
@@ -95,8 +95,8 @@ export const AboutPageContent: React.FC<AboutPageContentProps> = ({ lang }) => {
 
             {/* Official Certificate Visual */}
             <div className="lg:col-span-5">
-              <div className="bg-[#141a24] p-5 rounded-2xl border border-gray-800 shadow-2xl space-y-4">
-                <div className="flex items-center justify-between border-b border-gray-800 pb-3">
+              <div className="bg-[#222c3d] p-5 rounded-2xl border border-slate-700 shadow-2xl space-y-4">
+                <div className="flex items-center justify-between border-b border-slate-700 pb-3">
                   <div className="flex items-center gap-2">
                     <ShieldCheck className="w-5 h-5 text-gold-500" />
                     <span className="text-xs font-bold text-white uppercase tracking-wider">
@@ -109,7 +109,7 @@ export const AboutPageContent: React.FC<AboutPageContentProps> = ({ lang }) => {
                 </div>
 
                 {/* Actual Certificate Image Preview */}
-                <div className="relative aspect-[4/3] rounded-lg overflow-hidden border border-gray-700 bg-white">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden border border-slate-600 bg-white">
                   <Image
                     src="/images/info-cert.jpeg"
                     alt="Certificat de Inregistrare VENTORO SRL - Ministerul Justitiei"
@@ -128,7 +128,7 @@ export const AboutPageContent: React.FC<AboutPageContentProps> = ({ lang }) => {
       </section>
 
       {/* Official Legal Registration Table (from INFO.jpeg) */}
-      <section className="py-16 bg-[#0c1017] border-y border-gray-800">
+      <section className="py-16 bg-[#141c28] border-y border-slate-700/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-xs uppercase font-bold tracking-widest text-gold-400 bg-gold-500/10 px-3.5 py-1 rounded-full border border-gold-500/20">
@@ -147,7 +147,7 @@ export const AboutPageContent: React.FC<AboutPageContentProps> = ({ lang }) => {
             {data.fields.map((field, idx) => (
               <div
                 key={idx}
-                className="bg-[#141a24] p-4 sm:p-5 rounded-xl border border-gray-800/80 hover:border-gold-500/30 transition-all flex flex-col justify-between group"
+                className="bg-[#222c3d] p-4 sm:p-5 rounded-xl border border-slate-700/80 hover:border-gold-500/40 transition-all flex flex-col justify-between group shadow-md"
               >
                 <span className="text-[11px] uppercase font-bold text-gray-400 tracking-wider">
                   {field.label}

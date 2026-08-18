@@ -68,7 +68,7 @@ export default async function HomePage({
       <StatsSection lang={lang} />
 
       {/* Services Grid Section (Mirrors perdac.ro layout) */}
-      <section className="py-20 bg-[#0f141c] relative" id="services">
+      <section className="py-20 bg-[#1a2230] relative" id="services">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">

@@ -24,7 +24,7 @@ export const ProjectsPageContent: React.FC<ProjectsPageContentProps> = ({ lang }
   ];
 
   return (
-    <div className="flex flex-col w-full bg-[#0f141c]">
+    <div className="flex flex-col w-full bg-[#1a2230]">
       {/* Header Banner */}
       <section className="relative py-20 bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('/images/hero-energy.jpg')" }}>
         <div className="absolute inset-0 bg-black/85 backdrop-blur-xs" />
@@ -51,7 +51,7 @@ export const ProjectsPageContent: React.FC<ProjectsPageContentProps> = ({ lang }
             {data.projects.map((proj) => (
               <div
                 key={proj.id}
-                className="bg-[#141a24] rounded-xl overflow-hidden border border-gray-800 hover:border-gold-500/50 transition-all duration-300 shadow-xl flex flex-col group hover:-translate-y-1"
+                className="bg-[#222c3d] rounded-xl overflow-hidden border border-slate-700/80 hover:border-gold-500/50 transition-all duration-300 shadow-xl flex flex-col group hover:-translate-y-1"
               >
                 <div className="relative h-56 w-full overflow-hidden bg-gray-900">
                   <Image

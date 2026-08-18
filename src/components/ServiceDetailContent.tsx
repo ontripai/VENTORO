@@ -48,7 +48,7 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
   ];
 
   return (
-    <div className="flex flex-col w-full bg-[#0f141c]">
+    <div className="flex flex-col w-full bg-[#1a2230]">
       {/* Header Banner */}
       <section className="relative py-20 bg-cover bg-center overflow-hidden" style={{ backgroundImage: `url(${service.image})` }}>
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/70 backdrop-blur-xs" />
@@ -97,7 +97,7 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
               </div>
 
               {/* Key Features & Capabilities */}
-              <div className="bg-[#141a24] p-8 rounded-2xl border border-gray-800 space-y-5">
+              <div className="bg-[#222c3d] p-8 rounded-2xl border border-slate-700/80 space-y-5 shadow-md">
                 <h3 className="font-heading text-lg font-bold text-white flex items-center gap-2">
                   <Sparkles className="w-5 h-5 text-gold-500" />
                   <span>{lang === 'ro' ? 'Avantaje și Capabilități Cheie' : 'Key Advantages & Capabilities'}</span>
@@ -106,7 +106,7 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
                   {features.map((feature, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <CheckCircle2 className="w-4 h-4 text-gold-500 mt-1 shrink-0" />
-                      <span className="text-xs sm:text-sm text-gray-300">{feature}</span>
+                      <span className="text-xs sm:text-sm text-gray-200">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -118,15 +118,15 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
                   <h3 className="font-heading text-lg font-bold text-white">
                     {lang === 'ro' ? 'Specificații Tehnice și Standarde' : 'Technical Specifications & Standards'}
                   </h3>
-                  <div className="overflow-x-auto rounded-xl border border-gray-800">
+                  <div className="overflow-x-auto rounded-xl border border-slate-700/80">
                     <table className="w-full text-left text-xs sm:text-sm">
-                      <tbody className="divide-y divide-gray-800 bg-[#141a24]">
+                      <tbody className="divide-y divide-slate-700 bg-[#222c3d]">
                         {specs.map((spec, idx) => (
-                          <tr key={idx} className="hover:bg-gray-800/40 transition-colors">
-                            <td className="py-3 px-4 font-semibold text-gold-400 w-1/3 bg-gray-900/40">
+                          <tr key={idx} className="hover:bg-slate-700/40 transition-colors">
+                            <td className="py-3 px-4 font-semibold text-gold-400 w-1/3 bg-slate-900/40">
                               {spec.label}
                             </td>
-                            <td className="py-3 px-4 text-gray-300">
+                            <td className="py-3 px-4 text-gray-200">
                               {spec.value}
                             </td>
                           </tr>
@@ -152,7 +152,7 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
                     {service.gallery.map((imgUrl, idx) => (
                       <div
                         key={idx}
-                        className="relative aspect-[4/3] rounded-xl overflow-hidden border border-gray-800 hover:border-gold-500/60 transition-all group bg-gray-900 shadow-md"
+                        className="relative aspect-[4/3] rounded-xl overflow-hidden border border-slate-700 hover:border-gold-500/60 transition-all group bg-slate-900 shadow-md"
                       >
                         <Image
                           src={imgUrl}
@@ -169,7 +169,7 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
               )}
 
               {/* Topic Cluster Subtopics (SEO Authority Linking) */}
-              <div className="p-6 rounded-2xl bg-gray-900/40 border border-gray-800 space-y-3">
+              <div className="p-6 rounded-2xl bg-[#141c28] border border-slate-700/80 space-y-3 shadow-md">
                 <h4 className="text-xs uppercase font-bold tracking-wider text-gold-400">
                   {lang === 'ro' ? 'Subiecte Specializate în Acest Domeniu' : 'Specialized Topics in this Cluster'}
                 </h4>
@@ -177,7 +177,7 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
                   {subtopics.map((sub, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 rounded-md bg-[#141a24] text-gray-300 text-xs border border-gray-800 hover:border-gold-500/40 transition-colors"
+                      className="px-3 py-1 rounded-md bg-[#222c3d] text-gray-200 text-xs border border-slate-700 hover:border-gold-500/40 transition-colors"
                     >
                       {sub}
                     </span>
@@ -194,8 +194,8 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
             {/* Right Sidebar (4 Cols) */}
             <div className="lg:col-span-4 space-y-6">
               {/* All Services Navigation Widget */}
-              <div className="bg-[#141a24] p-6 rounded-2xl border border-gray-800 shadow-xl space-y-4">
-                <h3 className="font-heading text-base font-bold text-white border-b border-gray-800 pb-3 flex items-center justify-between">
+              <div className="bg-[#222c3d] p-6 rounded-2xl border border-slate-700/80 shadow-xl space-y-4">
+                <h3 className="font-heading text-base font-bold text-white border-b border-slate-700 pb-3 flex items-center justify-between">
                   <span>{lang === 'ro' ? 'Toate Serviciile' : 'All Services'}</span>
                   <span className="w-6 h-0.5 bg-gold-500 rounded" />
                 </h3>
@@ -218,7 +218,7 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
                           className={`flex items-center justify-between p-2.5 rounded-lg font-medium transition-all ${
                             isCurrent
                               ? 'bg-gold-500 text-black font-bold shadow-md'
-                              : 'text-gray-300 hover:text-gold-400 hover:bg-gray-800/60'
+                              : 'text-gray-200 hover:text-gold-400 hover:bg-slate-700/60'
                           }`}
                         >
                           <span className="line-clamp-1">{itemTitle}</span>
@@ -231,7 +231,7 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
               </div>
 
               {/* Quick Contact Card */}
-              <div className="bg-gradient-to-br from-gold-500/20 via-[#141a24] to-[#141a24] p-6 rounded-2xl border border-gold-500/40 shadow-xl space-y-4">
+              <div className="bg-gradient-to-br from-gold-500/20 via-[#222c3d] to-[#222c3d] p-6 rounded-2xl border border-gold-500/40 shadow-xl space-y-4">
                 <h4 className="font-heading text-base font-bold text-white">
                   {lang === 'ro' ? 'Aveți Nevoie de Consultanță?' : 'Need Expert Advisory?'}
                 </h4>
@@ -244,7 +244,7 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
                 <div className="pt-2 space-y-3">
                   <a
                     href={`tel:${dict.company.phoneRo.replace(/\s+/g, '')}`}
-                    className="flex items-center gap-3 p-3 rounded-lg bg-black/50 border border-gray-800 text-xs text-white hover:text-gold-400 hover:border-gold-500/40 transition-all"
+                    className="flex items-center gap-3 p-3 rounded-lg bg-black/50 border border-slate-700 text-xs text-white hover:text-gold-400 hover:border-gold-500/40 transition-all"
                   >
                     <PhoneCall className="w-4 h-4 text-gold-500 shrink-0" />
                     <div>
@@ -255,7 +255,7 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
 
                   <a
                     href={`mailto:${dict.company.email}`}
-                    className="flex items-center gap-3 p-3 rounded-lg bg-black/50 border border-gray-800 text-xs text-white hover:text-gold-400 hover:border-gold-500/40 transition-all"
+                    className="flex items-center gap-3 p-3 rounded-lg bg-black/50 border border-slate-700 text-xs text-white hover:text-gold-400 hover:border-gold-500/40 transition-all"
                   >
                     <Mail className="w-4 h-4 text-gold-500 shrink-0" />
                     <div>
@@ -267,7 +267,7 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
               </div>
 
               {/* Verified Company Badge */}
-              <div className="p-5 rounded-2xl bg-[#141a24] border border-gray-800 space-y-2 text-center">
+              <div className="p-5 rounded-2xl bg-[#222c3d] border border-slate-700/80 space-y-2 text-center shadow-md">
                 <ShieldCheck className="w-8 h-8 text-gold-500 mx-auto" />
                 <p className="text-xs font-bold text-white">VENTORO S.R.L.</p>
                 <p className="text-[11px] text-gray-400">

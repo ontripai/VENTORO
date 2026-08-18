@@ -18,7 +18,7 @@ export const TopBar: React.FC<TopBarProps> = ({ lang }) => {
   const alternatePath = getAlternatePath(pathname, alternateLang);
 
   return (
-    <div className="bg-[#111620] text-gray-300 text-xs py-2 border-b border-gray-800/80 hidden md:block">
+    <div className="bg-[#151c27] text-gray-300 text-xs py-2.5 border-b border-slate-700/60 hidden md:block">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         {/* Left Side: Contact details */}
         <div className="flex items-center space-x-6">

@@ -25,7 +25,7 @@ export const ContactPageContent: React.FC<ContactPageContentProps> = ({ lang }) 
   ];
 
   return (
-    <div className="flex flex-col w-full bg-[#0f141c]">
+    <div className="flex flex-col w-full bg-[#1a2230]">
       {/* Header Banner */}
       <section className="relative py-20 bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('/images/contact-header.jpg')" }}>
         <div className="absolute inset-0 bg-black/85 backdrop-blur-xs" />
@@ -50,7 +50,7 @@ export const ContactPageContent: React.FC<ContactPageContentProps> = ({ lang }) 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Box 1: Location */}
-            <div className="bg-[#141a24] p-6 rounded-2xl border border-gray-800 hover:border-gold-500/50 transition-all shadow-xl space-y-4 group">
+            <div className="bg-[#222c3d] p-6 rounded-2xl border border-slate-700/80 hover:border-gold-500/50 transition-all shadow-xl space-y-4 group">
               <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-black transition-all">
                 <MapPin className="w-6 h-6" />
               </div>
@@ -68,7 +68,7 @@ export const ContactPageContent: React.FC<ContactPageContentProps> = ({ lang }) 
             </div>
 
             {/* Box 2: Phones */}
-            <div className="bg-[#141a24] p-6 rounded-2xl border border-gray-800 hover:border-gold-500/50 transition-all shadow-xl space-y-4 group">
+            <div className="bg-[#222c3d] p-6 rounded-2xl border border-slate-700/80 hover:border-gold-500/50 transition-all shadow-xl space-y-4 group">
               <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-black transition-all">
                 <Phone className="w-6 h-6" />
               </div>
@@ -96,7 +96,7 @@ export const ContactPageContent: React.FC<ContactPageContentProps> = ({ lang }) 
             </div>
 
             {/* Box 3: Email */}
-            <div className="bg-[#141a24] p-6 rounded-2xl border border-gray-800 hover:border-gold-500/50 transition-all shadow-xl space-y-4 group">
+            <div className="bg-[#222c3d] p-6 rounded-2xl border border-slate-700/80 hover:border-gold-500/50 transition-all shadow-xl space-y-4 group">
               <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-black transition-all">
                 <Mail className="w-6 h-6" />
               </div>
@@ -124,7 +124,7 @@ export const ContactPageContent: React.FC<ContactPageContentProps> = ({ lang }) 
             </div>
 
             {/* Box 4: Opening Hours */}
-            <div className="bg-[#141a24] p-6 rounded-2xl border border-gray-800 hover:border-gold-500/50 transition-all shadow-xl space-y-4 group">
+            <div className="bg-[#222c3d] p-6 rounded-2xl border border-slate-700/80 hover:border-gold-500/50 transition-all shadow-xl space-y-4 group">
               <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center group-hover:bg-gold-500 group-hover:text-black transition-all">
                 <Clock className="w-6 h-6" />
               </div>
@@ -147,7 +147,7 @@ export const ContactPageContent: React.FC<ContactPageContentProps> = ({ lang }) 
       </section>
 
       {/* Contact Form & Map Section */}
-      <section className="py-12 bg-[#0c1017] border-t border-gray-800">
+      <section className="py-12 bg-[#141c28] border-t border-slate-700/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             {/* Form Column (7 Cols) */}
@@ -157,15 +157,15 @@ export const ContactPageContent: React.FC<ContactPageContentProps> = ({ lang }) 
 
             {/* Map Column (5 Cols) */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="bg-[#141a24] p-6 rounded-2xl border border-gray-800 shadow-2xl space-y-4">
-                <h3 className="font-heading text-lg font-bold text-white flex items-center justify-between border-b border-gray-800 pb-3">
+              <div className="bg-[#222c3d] p-6 rounded-2xl border border-slate-700/80 shadow-2xl space-y-4">
+                <h3 className="font-heading text-lg font-bold text-white flex items-center justify-between border-b border-slate-700 pb-3">
                   <span>{lang === 'ro' ? 'Locația Noastră pe Hartă' : 'Our Office Location'}</span>
                   <MapPin className="w-5 h-5 text-gold-500" />
                 </h3>
                 <div className="h-80 rounded-xl overflow-hidden">
                   <MapEmbed />
                 </div>
-                <div className="p-3 rounded-lg bg-gray-900/60 text-xs text-gray-400 space-y-1">
+                <div className="p-3 rounded-lg bg-black/40 text-xs text-gray-400 space-y-1">
                   <p className="font-bold text-white">VENTORO S.R.L.</p>
                   <p>{dict.company.operationalOffice}</p>
                 </div>

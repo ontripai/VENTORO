@@ -74,8 +74,8 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
       <header
         className={`sticky top-0 z-40 w-full transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#0b0e14]/95 backdrop-blur-md shadow-lg border-b border-gold-500/20 py-2.5'
-            : 'bg-[#0f141c] border-b border-gray-800 py-3.5'
+            ? 'bg-[#161e2b]/95 backdrop-blur-md shadow-lg border-b border-gold-500/20 py-2.5'
+            : 'bg-[#1a2230] border-b border-slate-700/80 py-3.5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -122,7 +122,7 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
                         className={`flex items-center gap-1 px-3 py-2 text-xs font-semibold uppercase tracking-wider transition-all relative ${
                           active
                             ? 'text-gold-400 font-bold'
-                            : 'text-gray-300 hover:text-gold-400'
+                            : 'text-gray-200 hover:text-gold-400'
                         }`}
                       >
                         <span>{link.name}</span>
@@ -134,13 +134,13 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
 
                       {/* Mega Dropdown Menu */}
                       <div
-                        className={`absolute top-full left-1/2 -translate-x-1/2 w-[720px] bg-[#0e131b] border border-gold-500/30 rounded-xl shadow-2xl p-6 transition-all duration-200 z-50 ${
+                        className={`absolute top-full left-1/2 -translate-x-1/2 w-[720px] bg-[#1e2838] border border-gold-500/30 rounded-xl shadow-2xl p-6 transition-all duration-200 z-50 ${
                           isServicesDropdownOpen
                             ? 'opacity-100 visible translate-y-1'
                             : 'opacity-0 invisible pointer-events-none -translate-y-2'
                         }`}
                       >
-                        <div className="flex items-center justify-between pb-3 mb-4 border-b border-gray-800">
+                        <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-700">
                           <span className="text-xs uppercase font-bold tracking-widest text-gold-400">
                             {lang === 'ro' ? 'Toate Domeniile Industriale & IT' : 'All Industry & IT Sectors'}
                           </span>
@@ -245,8 +245,8 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
 
         {/* Mobile Navigation Drawer */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-[#0c1017] border-b border-gold-500/20 px-4 pt-3 pb-6 space-y-3 animate-slide-up">
-            <div className="flex items-center justify-between py-2 border-b border-gray-800">
+          <div className="lg:hidden bg-[#161e2b] border-b border-gold-500/20 px-4 pt-3 pb-6 space-y-3 animate-slide-up">
+            <div className="flex items-center justify-between py-2 border-b border-slate-700">
               <span className="text-xs font-semibold text-gray-400 uppercase">
                 {lang === 'ro' ? 'Limbă / Language:' : 'Language / Limbă:'}
               </span>

@@ -96,7 +96,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ lang }) => {
 
   if (isSubmitted) {
     return (
-      <div className="bg-[#141a24] rounded-2xl p-8 border border-gold-500/50 shadow-2xl text-center animate-fade-in">
+      <div className="bg-[#222c3d] rounded-2xl p-8 border border-gold-500/50 shadow-2xl text-center animate-fade-in">
         <div className="w-16 h-16 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center mx-auto mb-4 border border-gold-500/40">
           <CheckCircle2 className="w-8 h-8" />
         </div>
@@ -108,7 +108,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ lang }) => {
         </p>
         <button
           onClick={() => setIsSubmitted(false)}
-          className="px-6 py-2.5 rounded-lg bg-gold-500 hover:bg-gold-400 text-black font-bold text-xs uppercase tracking-wider transition-all"
+          className="px-6 py-2.5 rounded-lg bg-gold-500 hover:bg-gold-400 text-black font-bold text-xs uppercase tracking-wider transition-all shadow-lg"
         >
           {formDict.sendAnother}
         </button>
@@ -117,12 +117,12 @@ export const ContactForm: React.FC<ContactFormProps> = ({ lang }) => {
   }
 
   return (
-    <div className="bg-[#141a24] rounded-2xl p-8 border border-gray-800 shadow-2xl relative">
+    <div className="bg-[#222c3d] rounded-2xl p-8 border border-slate-700/80 shadow-2xl relative">
       <div className="mb-6">
         <h3 className="font-heading text-xl sm:text-2xl font-bold text-white mb-1">
           {formDict.title}
         </h3>
-        <p className="text-xs sm:text-sm text-gray-400">
+        <p className="text-xs sm:text-sm text-gray-300">
           {formDict.subtitle}
         </p>
       </div>
@@ -148,7 +148,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ lang }) => {
               value={formData.name}
               onChange={handleChange}
               placeholder="Ion Popescu / John Doe"
-              className="w-full bg-[#0c1017] border border-gray-700 focus:border-gold-500 rounded-lg px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none transition-colors"
+              className="w-full bg-[#161e2b] border border-slate-600 focus:border-gold-500 rounded-lg px-4 py-2.5 text-xs text-white placeholder-gray-400 focus:outline-none transition-colors"
             />
           </div>
 
@@ -164,7 +164,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ lang }) => {
               value={formData.email}
               onChange={handleChange}
               placeholder="contact@company.com"
-              className="w-full bg-[#0c1017] border border-gray-700 focus:border-gold-500 rounded-lg px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none transition-colors"
+              className="w-full bg-[#161e2b] border border-slate-600 focus:border-gold-500 rounded-lg px-4 py-2.5 text-xs text-white placeholder-gray-400 focus:outline-none transition-colors"
             />
           </div>
         </div>
@@ -181,7 +181,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ lang }) => {
               value={formData.phone}
               onChange={handleChange}
               placeholder="+40 725 880 000"
-              className="w-full bg-[#0c1017] border border-gray-700 focus:border-gold-500 rounded-lg px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none transition-colors"
+              className="w-full bg-[#161e2b] border border-slate-600 focus:border-gold-500 rounded-lg px-4 py-2.5 text-xs text-white placeholder-gray-400 focus:outline-none transition-colors"
             />
           </div>
 
@@ -194,7 +194,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ lang }) => {
               name="service"
               value={formData.service}
               onChange={handleChange}
-              className="w-full bg-[#0c1017] border border-gray-700 focus:border-gold-500 rounded-lg px-4 py-2.5 text-xs text-white focus:outline-none transition-colors"
+              className="w-full bg-[#161e2b] border border-slate-600 focus:border-gold-500 rounded-lg px-4 py-2.5 text-xs text-white focus:outline-none transition-colors"
             >
               <option value="">{formDict.serviceDefault}</option>
               {servicesList.map((s) => (
@@ -218,7 +218,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ lang }) => {
             value={formData.message}
             onChange={handleChange}
             placeholder={lang === 'ro' ? 'Descrieți cererea sau proiectul dumneavoastră...' : 'Describe your inquiry or technical project specifications...'}
-            className="w-full bg-[#0c1017] border border-gray-700 focus:border-gold-500 rounded-lg px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none transition-colors resize-y"
+            className="w-full bg-[#161e2b] border border-slate-600 focus:border-gold-500 rounded-lg px-4 py-2.5 text-xs text-white placeholder-gray-400 focus:outline-none transition-colors resize-y"
           />
         </div>
 
@@ -230,7 +230,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ lang }) => {
             name="agree"
             checked={formData.agree}
             onChange={handleChange}
-            className="mt-0.5 w-4 h-4 rounded border-gray-700 bg-[#0c1017] text-gold-500 focus:ring-gold-500"
+            className="mt-0.5 w-4 h-4 rounded border-slate-600 bg-[#161e2b] text-gold-500 focus:ring-gold-500"
           />
           <label htmlFor="agree" className="text-[11px] text-gray-400 select-none">
             {formDict.agreeTerms}

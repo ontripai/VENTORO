@@ -16,7 +16,7 @@ export const AboutPreview: React.FC<AboutPreviewProps> = ({ lang }) => {
   const data = dict.aboutPreview;
 
   return (
-    <section className="py-20 bg-[#0d1118] relative overflow-hidden">
+    <section className="py-20 bg-[#141c28] relative overflow-hidden">
       {/* Decorative Glow */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -24,7 +24,7 @@ export const AboutPreview: React.FC<AboutPreviewProps> = ({ lang }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Visual Showcase & Certificate */}
           <div className="lg:col-span-6 relative">
-            <div className="relative rounded-2xl overflow-hidden border border-gray-800 shadow-2xl bg-black/50 aspect-[4/3]">
+            <div className="relative rounded-2xl overflow-hidden border border-slate-700 shadow-2xl bg-black/50 aspect-[4/3]">
               <Image
                 src="/images/about-presentation.jpg"
                 alt="VENTORO Headquarters & Corporate Operations"
@@ -34,7 +34,7 @@ export const AboutPreview: React.FC<AboutPreviewProps> = ({ lang }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
               {/* Floating Registration Badge */}
-              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#141a24]/90 backdrop-blur-md border border-gold-500/30 flex items-center justify-between shadow-xl">
+              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#222c3d]/95 backdrop-blur-md border border-gold-500/40 flex items-center justify-between shadow-xl">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-lg bg-gold-500/20 text-gold-400 flex items-center justify-center">
                     <ShieldCheck className="w-6 h-6" />

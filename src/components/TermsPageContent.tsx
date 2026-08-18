@@ -21,7 +21,7 @@ export const TermsPageContent: React.FC<TermsPageContentProps> = ({ lang }) => {
   ];
 
   return (
-    <div className="flex flex-col w-full bg-[#0f141c]">
+    <div className="flex flex-col w-full bg-[#1a2230]">
       {/* Header Banner */}
       <section className="relative py-20 bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('/images/service-consulting.jpg')" }}>
         <div className="absolute inset-0 bg-black/85 backdrop-blur-xs" />
@@ -46,7 +46,7 @@ export const TermsPageContent: React.FC<TermsPageContentProps> = ({ lang }) => {
       {/* Main Terms Body */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#141a24] p-8 sm:p-12 rounded-2xl border border-gray-800 shadow-2xl space-y-8 text-xs sm:text-sm text-gray-300 leading-relaxed">
+          <div className="bg-[#222c3d] p-8 sm:p-12 rounded-2xl border border-slate-700/80 shadow-2xl space-y-8 text-xs sm:text-sm text-gray-200 leading-relaxed">
             {/* Section 1 */}
             <div className="space-y-3">
               <h2 className="font-heading text-lg sm:text-xl font-bold text-white flex items-center gap-2">

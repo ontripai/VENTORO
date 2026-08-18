@@ -52,7 +52,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, lang }) => {
   const btnLabel = lang === 'ro' ? 'Citește mai mult' : 'Read more';
 
   return (
-    <div className="bg-[#141a24] rounded-xl overflow-hidden border border-gray-800 hover:border-gold-500/50 transition-all duration-300 group flex flex-col h-full shadow-lg hover:shadow-2xl hover:shadow-gold-500/10">
+    <div className="bg-[#222c3d] rounded-xl overflow-hidden border border-slate-700/80 hover:border-gold-500/60 transition-all duration-300 group flex flex-col h-full shadow-lg hover:shadow-2xl hover:shadow-gold-500/10">
       {/* Image Thumbnail with Rollover */}
       <Link
         href={targetUrl}
@@ -68,7 +68,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, lang }) => {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         {/* Hover overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#141a24] via-transparent to-transparent opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#222c3d] via-transparent to-transparent opacity-80" />
         
         {/* Category Icon Badge */}
         <div className="absolute top-4 right-4 w-11 h-11 rounded-lg bg-black/70 backdrop-blur-md border border-gold-500/40 flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-black transition-colors shadow-md">

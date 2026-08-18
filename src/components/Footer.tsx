@@ -18,7 +18,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0b0e14] text-gray-400 text-xs border-t border-gray-800 relative z-10">
+    <footer className="bg-[#141c28] text-gray-300 text-xs border-t border-slate-700/80 relative z-10">
       {/* Top Footer Section (3 Columns like perdac.ro) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
@@ -156,7 +156,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
       </div>
 
       {/* Bottom Sub-Footer Bar */}
-      <div className="bg-[#07090e] py-6 border-t border-gray-800/80 text-[11px]">
+      <div className="bg-[#0f1520] py-6 border-t border-slate-700/80 text-[11px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-center sm:text-left">
             {currentYear} © <span className="text-white font-semibold">VENTORO S.R.L.</span> – {dict.footer.rights}

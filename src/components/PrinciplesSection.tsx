@@ -13,7 +13,7 @@ export const PrinciplesSection: React.FC<PrinciplesSectionProps> = ({ lang }) =>
   const data = dict.principles;
 
   return (
-    <section className="py-20 bg-[#0f141c] relative">
+    <section className="py-20 bg-[#1a2230] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs uppercase font-bold tracking-widest text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20">
@@ -29,7 +29,7 @@ export const PrinciplesSection: React.FC<PrinciplesSectionProps> = ({ lang }) =>
           {data.items.map((item, idx) => (
             <div
               key={idx}
-              className="bg-[#141a24] p-6 rounded-xl border border-gray-800 hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:-translate-y-1"
+              className="bg-[#222c3d] p-6 rounded-xl border border-slate-700/80 hover:border-gold-500/50 transition-all duration-300 flex flex-col justify-between group shadow-lg hover:-translate-y-1"
             >
               <div>
                 <span className="font-heading text-4xl font-black text-gold-500/30 group-hover:text-gold-500 transition-colors block mb-4">

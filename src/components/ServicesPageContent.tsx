@@ -23,7 +23,7 @@ export const ServicesPageContent: React.FC<ServicesPageContentProps> = ({ lang }
   ];
 
   return (
-    <div className="flex flex-col w-full bg-[#0f141c]">
+    <div className="flex flex-col w-full bg-[#1a2230]">
       {/* Header Banner */}
       <section className="relative py-20 bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('/images/hero-industrial.jpg')" }}>
         <div className="absolute inset-0 bg-black/85 backdrop-blur-xs" />

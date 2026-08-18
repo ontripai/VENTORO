@@ -31,7 +31,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased bg-[#0f141c] text-gray-200 min-h-screen flex flex-col selection:bg-gold-500 selection:text-black">
+      <body className="antialiased bg-[#1a2230] text-gray-100 min-h-screen flex flex-col selection:bg-gold-500 selection:text-black">
         {children}
       </body>
     </html>

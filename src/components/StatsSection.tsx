@@ -16,7 +16,7 @@ export const StatsSection: React.FC<StatsSectionProps> = ({ lang }) => {
   const stats = dict.stats;
 
   return (
-    <section className="relative py-14 bg-gradient-to-b from-[#0a0d13] to-[#111622] border-y border-gray-800">
+    <section className="relative py-14 bg-gradient-to-b from-[#141c28] to-[#1a2230] border-y border-slate-700/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {stats.map((item, idx) => {
@@ -24,7 +24,7 @@ export const StatsSection: React.FC<StatsSectionProps> = ({ lang }) => {
             return (
               <div
                 key={idx}
-                className="p-6 rounded-xl bg-gray-900/40 border border-gray-800/80 hover:border-gold-500/30 transition-all text-center flex flex-col items-center group"
+                className="p-6 rounded-xl bg-[#222c3d]/60 border border-slate-700/80 hover:border-gold-500/50 transition-all text-center flex flex-col items-center group shadow-md"
               >
                 <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center text-gold-400 mb-4 group-hover:scale-110 group-hover:bg-gold-500 group-hover:text-black transition-all">
                   <Icon className="w-6 h-6" />

@@ -27,7 +27,7 @@ export const CollaborationPageContent: React.FC<CollaborationPageContentProps> =
   ];
 
   return (
-    <div className="flex flex-col w-full bg-[#0f141c]">
+    <div className="flex flex-col w-full bg-[#1a2230]">
       {/* Header Banner */}
       <section className="relative py-20 bg-cover bg-center overflow-hidden" style={{ backgroundImage: "url('/images/collaboration-partner.jpg')" }}>
         <div className="absolute inset-0 bg-black/85 backdrop-blur-xs" />
@@ -64,7 +64,7 @@ export const CollaborationPageContent: React.FC<CollaborationPageContentProps> =
             {data.pillars.map((pillar, idx) => (
               <div
                 key={idx}
-                className="bg-[#141a24] p-8 rounded-2xl border border-gray-800 hover:border-gold-500/50 transition-all duration-300 shadow-xl flex flex-col justify-between group hover:-translate-y-1"
+                className="bg-[#222c3d] p-8 rounded-2xl border border-slate-700/80 hover:border-gold-500/50 transition-all duration-300 shadow-xl flex flex-col justify-between group hover:-translate-y-1"
               >
                 <div>
                   <div className="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:text-black transition-all">
