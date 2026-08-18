@@ -30,6 +30,7 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
                   src="/images/logo.jpeg"
                   alt="VENTORO Logo"
                   fill
+                  sizes="48px"
                   className="object-contain p-0.5"
                 />
               </div>

@@ -90,6 +90,7 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
                   src="/images/logo.jpeg"
                   alt="VENTORO S.R.L. Logo"
                   fill
+                  sizes="48px"
                   className="object-contain p-0.5"
                   priority
                 />

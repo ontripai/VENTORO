@@ -29,6 +29,7 @@ export const AboutPreview: React.FC<AboutPreviewProps> = ({ lang }) => {
                 src="/images/about-presentation.jpg"
                 alt="VENTORO Headquarters & Corporate Operations"
                 fill
+                sizes="(max-width: 1024px) 100vw, 600px"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
