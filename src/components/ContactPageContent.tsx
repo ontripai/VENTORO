@@ -166,6 +166,17 @@ export const ContactPageContent: React.FC<ContactPageContentProps> = ({ lang }) 
                     {data.boxes.phone.at}
                   </a>
                 </p>
+                <div className="pt-2 border-t border-slate-700/60 mt-2">
+                  <a
+                    href="https://wa.me/40725880000"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#25D366]/20 border border-[#25D366]/40 text-[#25D366] text-[11px] font-bold hover:bg-[#25D366] hover:text-white transition-colors"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
+                    <span>WhatsApp: +40 725 880000</span>
+                  </a>
+                </div>
               </div>
             </div>
 

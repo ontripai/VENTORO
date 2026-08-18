@@ -30,6 +30,19 @@ export const TopBar: React.FC<TopBarProps> = ({ lang }) => {
             <span>{dict.topBar.phone}</span>
           </a>
           <a
+            href={`https://wa.me/40725880000?text=${encodeURIComponent(
+              lang === 'ro'
+                ? 'Bună ziua! Doresc informații despre serviciile VENTORO.'
+                : 'Hello! I would like information regarding VENTORO services.'
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-semibold transition-colors"
+          >
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span>WhatsApp: +40 725 880000</span>
+          </a>
+          <a
             href={`mailto:${dict.topBar.email}`}
             className="flex items-center gap-1.5 hover:text-gold-500 transition-colors"
           >

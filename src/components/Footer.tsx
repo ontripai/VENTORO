@@ -97,6 +97,20 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
                     </a>
                   </span>
                 </div>
+                <div className="flex items-center gap-2 text-emerald-400 font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                  <span>
+                    WHATSAPP :{' '}
+                    <a
+                      href="https://wa.me/40725880000"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-emerald-400 hover:text-emerald-300 underline"
+                    >
+                      +40 725 880000
+                    </a>
+                  </span>
+                </div>
                 <div className="flex items-start gap-2 text-gray-300">
                   <MapPin className="w-3.5 h-3.5 text-gold-500 mt-0.5 shrink-0" />
                   <span>

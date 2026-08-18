@@ -6,6 +6,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { CookieBanner } from '@/components/CookieBanner';
 import { StructuredData } from '@/components/StructuredData';
+import { WhatsAppCallCta } from '@/components/WhatsAppCallCta';
 
 export async function generateStaticParams() {
   return [{ lang: 'ro' }, { lang: 'en' }];
@@ -31,9 +32,10 @@ export default async function LocalizedLayout({
       <StructuredData type="LocalBusiness" />
       <TopBar lang={lang} />
       <Header lang={lang} />
-      <main className="flex-grow flex flex-col">{children}</main>
+      <main className="flex-grow flex flex-col pb-16 md:pb-0">{children}</main>
       <Footer lang={lang} />
       <CookieBanner lang={lang} />
+      <WhatsAppCallCta lang={lang} />
     </>
   );
 }

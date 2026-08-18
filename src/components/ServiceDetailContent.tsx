@@ -402,6 +402,25 @@ export const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({
                   </a>
 
                   <a
+                    href={`https://wa.me/40725880000?text=${encodeURIComponent(
+                      lang === 'ro'
+                        ? `Bună ziua! Doresc o ofertă de preț și detalii tehnice pentru serviciul: ${title}.`
+                        : `Hello! I would like a quote and technical details regarding: ${title}.`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 p-3 rounded-lg bg-emerald-950/40 border border-emerald-500/40 text-xs text-white hover:text-emerald-300 hover:border-emerald-400 transition-all"
+                  >
+                    <div className="w-4 h-4 rounded-full bg-emerald-500 shrink-0 flex items-center justify-center text-black font-bold text-[10px]">
+                      W
+                    </div>
+                    <div>
+                      <p className="text-[10px] text-emerald-400 font-bold uppercase">{lang === 'ro' ? 'WhatsApp Rapid' : 'Quick WhatsApp'}</p>
+                      <p className="font-bold text-white">+40 725 880000</p>
+                    </div>
+                  </a>
+
+                  <a
                     href={`mailto:${dict.company.email}`}
                     className="flex items-center gap-3 p-3 rounded-lg bg-black/50 border border-slate-700 text-xs text-white hover:text-gold-400 hover:border-gold-500/40 transition-all"
                   >
