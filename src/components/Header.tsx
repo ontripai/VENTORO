@@ -72,7 +72,7 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
   return (
     <>
       <header
-        className={`sticky top-0 z-40 w-full transition-all duration-300 ${
+        className={`site-header sticky top-0 z-40 w-full transition-all duration-300 ${
           isScrolled
             ? 'bg-[#161e2b]/95 backdrop-blur-md shadow-lg border-b border-gold-500/20 py-2.5'
             : 'bg-[#1a2230] border-b border-slate-700/80 py-3.5'
@@ -85,7 +85,7 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
               href={`/${lang}`}
               className="flex items-center gap-3 group focus:outline-none"
             >
-              <div className="relative w-12 h-12 rounded-lg overflow-hidden border border-gold-500/40 p-0.5 bg-black/60 group-hover:border-gold-400 transition-colors shadow-md">
+              <div className="logo-box relative w-12 h-12 rounded-lg overflow-hidden border border-gold-500/40 p-0.5 bg-black/60 group-hover:border-gold-400 transition-colors shadow-md">
                 <Image
                   src="/images/logo.jpeg"
                   alt="VENTORO S.R.L. Logo"
@@ -95,7 +95,7 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-heading text-xl font-bold tracking-wider text-white group-hover:text-gold-400 transition-colors">
+                <span className="brand-text font-heading text-xl font-bold tracking-wider text-white group-hover:text-gold-400 transition-colors">
                   VENTORO
                 </span>
                 <span className="text-[10px] tracking-[0.25em] text-gold-500 font-semibold uppercase">
@@ -119,22 +119,22 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
                     >
                       <Link
                         href={link.href}
-                        className={`flex items-center gap-1 px-3 py-2 text-xs font-semibold uppercase tracking-wider transition-all relative ${
+                        className={`nav-link flex items-center gap-1 px-3 py-2 text-xs font-semibold uppercase tracking-wider transition-all relative ${
                           active
-                            ? 'text-gold-400 font-bold'
+                            ? 'active-link text-gold-400 font-bold'
                             : 'text-gray-200 hover:text-gold-400'
                         }`}
                       >
                         <span>{link.name}</span>
                         <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:rotate-180 text-gold-500" />
                         {active && (
-                          <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-gold-500 rounded-full" />
+                          <span className="active-bar absolute bottom-0 left-3 right-3 h-0.5 bg-gold-500 rounded-full" />
                         )}
                       </Link>
 
                       {/* Mega Dropdown Menu */}
                       <div
-                        className={`absolute top-full left-1/2 -translate-x-1/2 w-[720px] bg-[#1e2838] border border-gold-500/30 rounded-xl shadow-2xl p-6 transition-all duration-200 z-50 ${
+                        className={`dropdown-menu absolute top-full left-1/2 -translate-x-1/2 w-[720px] bg-[#1e2838] border border-gold-500/30 rounded-xl shadow-2xl p-6 transition-all duration-200 z-50 ${
                           isServicesDropdownOpen
                             ? 'opacity-100 visible translate-y-1'
                             : 'opacity-0 invisible pointer-events-none -translate-y-2'
@@ -187,15 +187,15 @@ export const Header: React.FC<HeaderProps> = ({ lang }) => {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider transition-all relative ${
+                    className={`nav-link px-3 py-2 text-xs font-semibold uppercase tracking-wider transition-all relative ${
                       active
-                        ? 'text-gold-400 font-bold'
+                        ? 'active-link text-gold-400 font-bold'
                         : 'text-gray-300 hover:text-gold-400'
                     }`}
                   >
                     <span>{link.name}</span>
                     {active && (
-                      <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-gold-500 rounded-full" />
+                      <span className="active-bar absolute bottom-0 left-3 right-3 h-0.5 bg-gold-500 rounded-full" />
                     )}
                   </Link>
                 );

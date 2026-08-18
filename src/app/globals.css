@@ -12,8 +12,8 @@
     --bg-card-subtle: #18202d;
     --bg-header: #1a2230;
     --bg-topbar: #151c27;
-    --bg-footer: #141c28;
-    --bg-subfooter: #0f1520;
+    --bg-footer: #111827;
+    --bg-subfooter: #0b0f19;
     --bg-dropdown: #1e2838;
     --border-main: #334155;
     --border-card: #3b485d;
@@ -37,8 +37,8 @@
     --bg-card-subtle: #f1f5f9;
     --bg-header: #ffffff;
     --bg-topbar: #f1f5f9;
-    --bg-footer: #0f172a;
-    --bg-subfooter: #0b1120;
+    --bg-footer: #111827;
+    --bg-subfooter: #0b0f19;
     --bg-dropdown: #ffffff;
     --border-main: #e2e8f0;
     --border-card: #e2e8f0;
@@ -62,8 +62,8 @@
     --bg-card-subtle: #f1f5f9;
     --bg-header: #111827;
     --bg-topbar: #0b0f19;
-    --bg-footer: #0f172a;
-    --bg-subfooter: #090e17;
+    --bg-footer: #111827;
+    --bg-subfooter: #0b0f19;
     --bg-dropdown: #1f2937;
     --border-main: #e2e8f0;
     --border-card: #e2e8f0;
@@ -137,21 +137,24 @@
 }
 
 /* ==========================================================================
-   1. DARK OVERLAYS: HERO SLIDER, CTA BANNER & HEADER BANNERS ALWAYS HAVE WHITE TEXT
+   1. HERO SLIDER, CTA BANNER & HEADER BANNERS (ALWAYS CRISP WHITE & GOLD TEXT)
    ========================================================================== */
 .hero-slider h1,
 .hero-slider h2,
 .hero-slider h3,
 .hero-slider .font-heading,
+.hero-slider .text-white,
 .page-header-banner h1,
 .page-header-banner h2,
 .page-header-banner h3,
 .page-header-banner .font-heading,
+.page-header-banner .text-white,
 .cta-banner h1,
 .cta-banner h2,
 .cta-banner h3,
 .cta-banner h4,
-.cta-banner .font-heading {
+.cta-banner .font-heading,
+.cta-banner .text-white {
   color: #ffffff !important;
 }
 
@@ -171,313 +174,301 @@
 }
 
 /* ==========================================================================
-   2. FOOTER: ALWAYS EXECUTIVE DARK NAVY WITH CRISP WHITE & GOLD TEXT
+   2. SITE FOOTER: ALWAYS SLEEK EXECUTIVE DARK IN ALL THEMES
    ========================================================================== */
-footer {
-  background-color: #0f172a !important;
+footer.site-footer,
+.site-footer {
+  background-color: #111827 !important;
   color: #cbd5e1 !important;
-  border-top: 1px solid #1e293b !important;
+  border-top: 1px solid #1f2937 !important;
 }
 
-footer h3,
-footer .font-heading,
-footer strong,
-footer span.text-white,
-footer a.text-white {
+footer.site-footer h3,
+footer.site-footer .font-heading,
+footer.site-footer strong,
+footer.site-footer span.text-white,
+footer.site-footer a.text-white {
   color: #ffffff !important;
 }
 
-footer p,
-footer span,
-footer li,
-footer a {
+footer.site-footer p,
+footer.site-footer span,
+footer.site-footer li,
+footer.site-footer a {
   color: #cbd5e1 !important;
 }
 
-footer a:hover {
+footer.site-footer a:hover {
   color: #ffd014 !important;
 }
 
-footer .bg-gray-900\/60,
-footer .bg-slate-900\/60,
-footer .bg-black {
+footer.site-footer .bg-gray-900\/60,
+footer.site-footer .bg-slate-900\/60,
+footer.site-footer .bg-black {
   background-color: #1e293b !important;
   border-color: #334155 !important;
 }
 
-footer .bg-\[\#0f1520\],
-footer .bg-\[\#07090e\] {
-  background-color: #090e17 !important;
-  border-color: #1e293b !important;
+footer.site-footer .bg-gray-900\/60 span.text-white {
+  color: #ffffff !important;
+}
+
+footer.site-footer .bg-gray-900\/60 span.text-gray-500 {
+  color: #94a3b8 !important;
+}
+
+footer.site-footer .bg-\[\#0f1520\],
+footer.site-footer .bg-\[\#07090e\] {
+  background-color: #0b0f19 !important;
+  border-top: 1px solid #1f2937 !important;
+}
+
+footer.site-footer .bg-\[\#0f1520\] p,
+footer.site-footer .bg-\[\#0f1520\] span,
+footer.site-footer .bg-\[\#0f1520\] a {
+  color: #94a3b8 !important;
+}
+
+footer.site-footer .bg-\[\#0f1520\] a:hover {
+  color: #ffd014 !important;
 }
 
 /* ==========================================================================
-   3. THEME 1: PURE LIGHT THEME (White Background, Clean Cards, Dark Typography)
+   3. SITE HEADER: PRECISE STYLING ACROSS THEMES
    ========================================================================== */
-[data-theme="light"] {
-  /* Header in Light Mode */
-  header {
-    background-color: #ffffff !important;
-    border-color: #e2e8f0 !important;
-  }
+/* Light Theme Header */
+[data-theme="light"] header.site-header {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
 
-  header .font-heading,
-  header span.text-white,
-  header a.text-white,
-  header nav a {
-    color: #0f172a !important;
-  }
+[data-theme="light"] header.site-header .brand-text {
+  color: #0f172a !important;
+}
 
-  header nav a:hover,
-  header nav a.text-gold-400 {
-    color: #c59b27 !important;
-  }
+[data-theme="light"] header.site-header .nav-link {
+  color: #0f172a !important;
+  font-weight: 600 !important;
+}
 
-  header .text-gray-200,
-  header .text-gray-300,
-  header .text-gray-400 {
-    color: #334155 !important;
-  }
+[data-theme="light"] header.site-header .nav-link:hover {
+  color: #c59b27 !important;
+}
 
-  header .bg-black\/60 {
-    background-color: #f1f5f9 !important;
-    border-color: #cbd5e1 !important;
-  }
+[data-theme="light"] header.site-header .active-link {
+  color: #c59b27 !important;
+  font-weight: 800 !important;
+}
 
-  header .bg-\[\#1e2838\],
-  header .bg-\[\#0e131b\] {
-    background-color: #ffffff !important;
-    border-color: #e2e8f0 !important;
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.12) !important;
-  }
+[data-theme="light"] header.site-header .active-bar {
+  background-color: #c59b27 !important;
+}
 
-  header .bg-\[\#1e2838\] span,
-  header .bg-\[\#1e2838\] p,
-  header .bg-\[\#1e2838\] a {
-    color: #0f172a !important;
-  }
+[data-theme="light"] header.site-header .logo-box {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+}
 
-  /* TopBar in Light Mode */
-  .bg-\[\#151c27\],
-  .bg-\[\#111620\] {
-    background-color: #f1f5f9 !important;
-    border-color: #e2e8f0 !important;
-  }
+[data-theme="light"] header.site-header .dropdown-menu {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15) !important;
+}
 
-  .bg-\[\#151c27\] span,
-  .bg-\[\#151c27\] a,
-  .bg-\[\#111620\] span,
-  .bg-\[\#111620\] a {
-    color: #334155 !important;
-  }
+[data-theme="light"] header.site-header .dropdown-menu p.text-gray-200 {
+  color: #0f172a !important;
+}
 
-  /* Main Body & Light Sections */
-  main,
-  .bg-\[\#1a2230\],
-  .bg-\[\#0f141c\] {
-    background-color: #f8fafc !important;
-  }
+[data-theme="light"] header.site-header .dropdown-menu p.text-gray-500 {
+  color: #64748b !important;
+}
 
-  .bg-\[\#141c28\],
-  .bg-\[\#0c1017\],
-  .bg-\[\#0d1118\] {
-    background-color: #ffffff !important;
-    border-color: #e2e8f0 !important;
-  }
+[data-theme="light"] header.site-header button,
+[data-theme="light"] header.site-header .text-gray-300 {
+  color: #0f172a !important;
+}
 
-  /* Cards in Light Mode */
-  .bg-\[\#222c3d\],
-  .bg-\[\#141a24\] {
-    background-color: #ffffff !important;
-    border-color: #e2e8f0 !important;
-    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06) !important;
-  }
+/* Hybrid Theme Header */
+[data-theme="hybrid"] header.site-header {
+  background-color: #111827 !important;
+  border-bottom: 1px solid #1f2937 !important;
+}
 
-  /* Dark Typography inside Content Sections (excluding hero and banners) */
-  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h2,
-  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h3,
-  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h4,
-  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h5,
-  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) .font-heading {
-    color: #0f172a !important;
-  }
+[data-theme="hybrid"] header.site-header .brand-text {
+  color: #ffffff !important;
+}
 
-  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) p,
-  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) span:not(.text-gold-400):not(.text-gold-500):not(.bg-gold-500) {
-    color: #334155 !important;
-  }
+[data-theme="hybrid"] header.site-header .nav-link {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
 
-  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) .text-white {
-    color: #0f172a !important;
-  }
+[data-theme="hybrid"] header.site-header .nav-link:hover {
+  color: #ffd014 !important;
+}
 
-  /* Tables in Light Mode */
-  table tbody tr {
-    background-color: #ffffff !important;
-    border-color: #e2e8f0 !important;
-  }
+[data-theme="hybrid"] header.site-header .active-link {
+  color: #ffd014 !important;
+  font-weight: 800 !important;
+}
 
-  table td.bg-slate-900\/40,
-  table td.bg-gray-900\/40 {
-    background-color: #f1f5f9 !important;
-    color: #0f172a !important;
-  }
+[data-theme="hybrid"] header.site-header .dropdown-menu {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
 
-  table td {
-    color: #334155 !important;
-    border-color: #e2e8f0 !important;
-  }
+[data-theme="hybrid"] header.site-header .dropdown-menu p.text-gray-200 {
+  color: #ffffff !important;
+}
 
-  /* Forms in Light Mode */
-  input,
-  select,
-  textarea {
-    background-color: #ffffff !important;
-    color: #0f172a !important;
-    border-color: #cbd5e1 !important;
-  }
+/* Slate & Obsidian Header Defaults */
+[data-theme="slate"] header.site-header,
+[data-theme="obsidian"] header.site-header {
+  .brand-text { color: #ffffff !important; }
+  .nav-link { color: #e2e8f0 !important; }
+  .active-link { color: #ffd014 !important; }
 }
 
 /* ==========================================================================
-   4. THEME 2: HYBRID LUXURY (Dark Navy Header + Clean White Body)
+   4. SITE TOPBAR
    ========================================================================== */
-[data-theme="hybrid"] {
-  /* Header in Hybrid: Deep Dark Navy with White & Gold Text */
-  header {
-    background-color: #111827 !important;
-    border-color: #1f2937 !important;
-  }
+[data-theme="light"] .site-topbar {
+  background-color: #f1f5f9 !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  color: #334155 !important;
+}
 
-  header .font-heading,
-  header span.text-white,
-  header a.text-white,
-  header nav a {
-    color: #ffffff !important;
-  }
+[data-theme="light"] .site-topbar a,
+[data-theme="light"] .site-topbar span {
+  color: #334155 !important;
+}
 
-  header nav a:hover,
-  header nav a.text-gold-400 {
-    color: #ffd014 !important;
-  }
+[data-theme="hybrid"] .site-topbar,
+[data-theme="slate"] .site-topbar,
+[data-theme="obsidian"] .site-topbar {
+  background-color: #0b0f19 !important;
+  border-bottom: 1px solid #1f2937 !important;
+  color: #cbd5e1 !important;
+}
 
-  header .text-gray-200,
-  header .text-gray-300 {
-    color: #cbd5e1 !important;
-  }
-
-  header .bg-\[\#1e2838\],
-  header .bg-\[\#0e131b\] {
-    background-color: #1f2937 !important;
-    border-color: #374151 !important;
-  }
-
-  /* TopBar in Hybrid: Dark */
-  .bg-\[\#151c27\],
-  .bg-\[\#111620\] {
-    background-color: #0b0f19 !important;
-    border-color: #1f2937 !important;
-  }
-
-  .bg-\[\#151c27\] span,
-  .bg-\[\#151c27\] a,
-  .bg-\[\#111620\] span,
-  .bg-\[\#111620\] a {
-    color: #cbd5e1 !important;
-  }
-
-  /* Main Body is Crisp White */
-  main,
-  .bg-\[\#1a2230\],
-  .bg-\[\#0f141c\] {
-    background-color: #f8fafc !important;
-  }
-
-  .bg-\[\#141c28\],
-  .bg-\[\#0c1017\],
-  .bg-\[\#0d1118\] {
-    background-color: #ffffff !important;
-    border-color: #e2e8f0 !important;
-  }
-
-  /* Cards in Hybrid Mode */
-  .bg-\[\#222c3d\],
-  .bg-\[\#141a24\] {
-    background-color: #ffffff !important;
-    border-color: #e2e8f0 !important;
-    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.08) !important;
-  }
-
-  /* Typography inside Content Sections */
-  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h2,
-  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h3,
-  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h4,
-  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h5,
-  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) .font-heading {
-    color: #0f172a !important;
-  }
-
-  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) p,
-  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) span:not(.text-gold-400):not(.text-gold-500):not(.bg-gold-500) {
-    color: #334155 !important;
-  }
-
-  main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) .text-white {
-    color: #0f172a !important;
-  }
-
-  /* Tables in Hybrid Mode */
-  table tbody tr {
-    background-color: #ffffff !important;
-    border-color: #e2e8f0 !important;
-  }
-
-  table td.bg-slate-900\/40,
-  table td.bg-gray-900\/40 {
-    background-color: #f1f5f9 !important;
-    color: #0f172a !important;
-  }
-
-  table td {
-    color: #334155 !important;
-    border-color: #e2e8f0 !important;
-  }
-
-  /* Forms in Hybrid Mode */
-  input,
-  select,
-  textarea {
-    background-color: #ffffff !important;
-    color: #0f172a !important;
-    border-color: #cbd5e1 !important;
-  }
+[data-theme="hybrid"] .site-topbar a,
+[data-theme="hybrid"] .site-topbar span {
+  color: #cbd5e1 !important;
 }
 
 /* ==========================================================================
-   5. THEME 3: MODERN SLATE THEME (Current Default)
+   5. BODY & CONTENT SECTIONS IN LIGHT & HYBRID THEMES
    ========================================================================== */
-[data-theme="slate"] {
-  .bg-\[\#1a2230\] { background-color: #1a2230 !important; }
-  .bg-\[\#222c3d\] { background-color: #222c3d !important; }
-  .bg-\[\#141c28\] { background-color: #141c28 !important; }
-  .bg-\[\#151c27\] { background-color: #151c27 !important; }
-  .bg-\[\#1e2838\] { background-color: #1e2838 !important; }
-  .bg-\[\#161e2b\] { background-color: #161e2b !important; }
+[data-theme="light"] main,
+[data-theme="hybrid"] main {
+  background-color: #f8fafc !important;
 }
 
-/* ==========================================================================
-   6. THEME 4: DEEP OBSIDIAN THEME (Previous Theme)
-   ========================================================================== */
-[data-theme="obsidian"] {
-  .bg-\[\#1a2230\],
-  .bg-\[\#0f141c\] { background-color: #0f141c !important; }
-  .bg-\[\#222c3d\],
-  .bg-\[\#141a24\] { background-color: #141a24 !important; }
-  .bg-\[\#141c28\],
-  .bg-\[\#0c1017\] { background-color: #0c1017 !important; }
-  .bg-\[\#151c27\],
-  .bg-\[\#111620\],
-  .bg-\[\#0b0e14\] { background-color: #0b0e14 !important; }
-  .bg-\[\#1e2838\],
-  .bg-\[\#0e131b\] { background-color: #0e131b !important; }
-  .bg-\[\#161e2b\] { background-color: #0c1017 !important; }
+[data-theme="light"] .bg-\[\#1a2230\],
+[data-theme="hybrid"] .bg-\[\#1a2230\],
+[data-theme="light"] .bg-\[\#0f141c\],
+[data-theme="hybrid"] .bg-\[\#0f141c\] {
+  background-color: #f8fafc !important;
 }
+
+[data-theme="light"] .bg-\[\#141c28\],
+[data-theme="hybrid"] .bg-\[\#141c28\],
+[data-theme="light"] .bg-\[\#0c1017\],
+[data-theme="hybrid"] .bg-\[\#0c1017\],
+[data-theme="light"] .bg-\[\#0d1118\],
+[data-theme="hybrid"] .bg-\[\#0d1118\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Light / Hybrid Content Cards */
+[data-theme="light"] .bg-\[\#222c3d\],
+[data-theme="hybrid"] .bg-\[\#222c3d\],
+[data-theme="light"] .bg-\[\#141a24\],
+[data-theme="hybrid"] .bg-\[\#141a24\] {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Headings in Light & Hybrid content sections */
+[data-theme="light"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h2,
+[data-theme="hybrid"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h2,
+[data-theme="light"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h3,
+[data-theme="hybrid"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h3,
+[data-theme="light"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h4,
+[data-theme="hybrid"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h4,
+[data-theme="light"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h5,
+[data-theme="hybrid"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) h5,
+[data-theme="light"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) .font-heading,
+[data-theme="hybrid"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) .font-heading {
+  color: #0f172a !important;
+}
+
+/* Paragraphs & descriptions in Light & Hybrid */
+[data-theme="light"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) p,
+[data-theme="hybrid"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) p,
+[data-theme="light"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) span:not(.text-gold-400):not(.text-gold-500):not(.bg-gold-500),
+[data-theme="hybrid"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) span:not(.text-gold-400):not(.text-gold-500):not(.bg-gold-500) {
+  color: #334155 !important;
+}
+
+[data-theme="light"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) .text-white,
+[data-theme="hybrid"] main section:not(.hero-slider):not(.page-header-banner):not(.cta-banner) .text-white {
+  color: #0f172a !important;
+}
+
+/* Tables in Light & Hybrid */
+[data-theme="light"] table tbody tr,
+[data-theme="hybrid"] table tbody tr {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme="light"] table td.bg-slate-900\/40,
+[data-theme="hybrid"] table td.bg-slate-900\/40,
+[data-theme="light"] table td.bg-gray-900\/40,
+[data-theme="hybrid"] table td.bg-gray-900\/40 {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] table td,
+[data-theme="hybrid"] table td {
+  color: #334155 !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Inputs in Light & Hybrid */
+[data-theme="light"] input,
+[data-theme="hybrid"] input,
+[data-theme="light"] select,
+[data-theme="hybrid"] select,
+[data-theme="light"] textarea,
+[data-theme="hybrid"] textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Slate & Obsidian Base Classes */
+[data-theme="slate"] .bg-\[\#1a2230\] { background-color: #1a2230 !important; }
+[data-theme="slate"] .bg-\[\#222c3d\] { background-color: #222c3d !important; }
+[data-theme="slate"] .bg-\[\#141c28\] { background-color: #141c28 !important; }
+[data-theme="slate"] .bg-\[\#151c27\] { background-color: #151c27 !important; }
+[data-theme="slate"] .bg-\[\#1e2838\] { background-color: #1e2838 !important; }
+[data-theme="slate"] .bg-\[\#161e2b\] { background-color: #161e2b !important; }
+
+[data-theme="obsidian"] .bg-\[\#1a2230\],
+[data-theme="obsidian"] .bg-\[\#0f141c\] { background-color: #0f141c !important; }
+[data-theme="obsidian"] .bg-\[\#222c3d\],
+[data-theme="obsidian"] .bg-\[\#141a24\] { background-color: #141a24 !important; }
+[data-theme="obsidian"] .bg-\[\#141c28\],
+[data-theme="obsidian"] .bg-\[\#0c1017\] { background-color: #0c1017 !important; }
+[data-theme="obsidian"] .bg-\[\#151c27\],
+[data-theme="obsidian"] .bg-\[\#111620\],
+[data-theme="obsidian"] .bg-\[\#0b0e14\] { background-color: #0b0e14 !important; }
+[data-theme="obsidian"] .bg-\[\#1e2838\],
+[data-theme="obsidian"] .bg-\[\#0e131b\] { background-color: #0e131b !important; }
+[data-theme="obsidian"] .bg-\[\#161e2b\] { background-color: #0c1017 !important; }
